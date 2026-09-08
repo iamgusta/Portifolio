@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Gustavo | Portfólio</title>
+
+    <link
+        rel="stylesheet"
+        href="./Style/Style.Css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         CABEÇALHO
+    ====================================================== -->
+
+    <header class="cabecalho">
+
+        <nav class="cabecalho__nav">
+
+            <a
+                class="cabecalho__link"
+                href="index.html"
+            >
+                Home
+            </a>
+
+            <a
+                class="cabecalho__link"
+                href="About.Html"
+            >
+                Sobre mim
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         APRESENTAÇÃO
+    ====================================================== -->
+
+    <main class="apresentacao">
+
+        <section class="apresentacao__conteudo">
+
+            <h1 class="apresentacao__titulo">
+
+                Minha evolução construída com dados reais,
+                e com bastante desempenho!
+
+            </h1>
+
+
+            <p class="apresentacao__paragrafo">
+
+                Olá, sou Gustavo Lopes, criador de
+                tecnologias digitais inovadoras e eficientes.
+                Gostaria de te convidar a conhecer um pouco
+                mais sobre meu portfólio.
+
+            </p>
+
+
+
+            <!-- =================================================
+                 REDES SOCIAIS
+            ================================================== -->
+
+            <div class="apresentacao__links">
+
+                <h2 class="titulo-secundario">
+
+                    Acesse minhas redes:
+
+                </h2>
+
+
+                <a
+                    class="apresentacao__links__link"
+                    href="https://instagram.com/iamgustavoblack"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <img
+                        src="assets/instagram.png"
+                        alt="Instagram"
+                    >
+
+                    Instagram
+
+                </a>
+
+
+                <a
+                    class="apresentacao__links__link"
+                    href="https://github.com/iamgusta"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <img
+                        src="assets/github.png"
+                        alt="GitHub"
+                    >
+
+                    GitHub
+
+                </a>
+
+
+                <a
+                    class="apresentacao__links__link"
+                    href="https://www.linkedin.com/in/iamgustavoti/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+
+                    <img
+                        src="assets/linkedin.png"
+                        alt="LinkedIn"
+                    >
+
+                    LinkedIn
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FOTO
+        ================================================== -->
+
+        <img
+            class="foto-perfil"
+            src="./assets/minha foto.jpeg"
+            alt="Foto de Gustavo"
+        >
+
+    </main>
+
+
+
+    <!-- =====================================================
+         GUSTAVO LAB
+    ====================================================== -->
+
+    <section
+        class="gustavo-lab"
+        id="gustavo-lab"
+    >
+
+        <div class="gustavo-lab__conteudo">
+
+
+            <!-- =================================================
+                 TÍTULO
+            ================================================== -->
+
+            <h2 class="titulo-secundario">
+
+                🐘​ Gustavo Lab
+
+            </h2>
+
+
+            <p class="lab-descricao">
+
+                Área interativa do meu portfólio,
+                desenvolvida com Python, FastAPI,
+                SQL e MySQL.
+
+            </p>
+
+
+
+            <!-- =================================================
+                 ÁREA DE MENSAGEM
+            ================================================== -->
+
+            <div class="lab-card">
+
+                <h3>
+
+                    👋 Bem-vindo ao Gustavo Lab
+
+                </h3>
+
+
+                <p>
+
+                    Deixe seu nome e, se quiser,
+                    uma mensagem positiva para quem
+                    visitar meu portfólio.
+
+                </p>
+
+
+                <!-- NOME -->
+
+                <input
+                    type="text"
+                    id="nome-visitante"
+                    class="lab-input"
+                    placeholder="Digite seu nome"
+                    maxlength="100"
+                >
+
+
+                <!-- MENSAGEM -->
+
+                <textarea
+                    id="mensagem-positiva"
+                    class="lab-input lab-textarea"
+                    placeholder="Deixe uma mensagem positiva (opcional)"
+                    maxlength="500"
+                ></textarea>
+
+
+                <!-- BOTÃO -->
+
+                <button
+                    type="button"
+                    id="btn-enviar-mensagem"
+                    class="lab-button"
+                >
+
+                     Entrar no Lab
+
+                </button>
+
+
+                <!-- MENSAGEM DE STATUS -->
+
+                <p
+                    id="mensagem-status"
+                    class="lab-mensagem"
+                ></p>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 MENSAGENS PÚBLICAS
+            ================================================== -->
+
+            <div class="mensagens-area">
+
+                <h2 class="titulo-secundario">
+
+                    💬 Quem já passou por aqui
+
+                </h2>
+
+
+                <p class="mensagens-subtitulo">
+
+                    Mensagens deixadas pelos visitantes
+                    do Gustavo Lab.
+
+                </p>
+
+
+                <div id="lista-mensagens">
+
+                    <p class="carregando">
+
+                         Carregando mensagens...
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
+
+    <footer class="rodape">
+
+        <p>
+
+            Desenvolvedor Gustavo Lopes
+
+        </p>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        src="./script/script.js"
+    ></script>
+
+
+</body>
+
+</html>
