@@ -17,30 +17,6 @@ Este repositório contém meu portfólio pessoal, onde apresento meus projetos, 
  Git & GitHub
  APIs
  Visual Studio Code
- 
- Estrutura do projeto 
-Portifolio/
-│
-├── assets/
-│   ├── Minha foto.jpeg
-│   ├── github.png
-│   ├── instagram.png
-│   └── linkedin.png
-│
-├── Python/
-│   └── api.py
-│
-├── script/
-│   └── script.js
-│
-├── Style/
-│   └── Style.Css
-│
-├── About.Html
-├── index.html
-├── Curriculo.pdf
-└── .gitignore
-
 
 O portfólio possui atualmente:
 
