@@ -18,8 +18,6 @@
 
 </div>
 
----
-
 ## ✦ Sobre mim
 
 Olá! Eu sou **Gustavo Lopes**, estudante de **Sistemas de Informação** e entusiasta de tecnologia, desenvolvimento de sistemas e dados.
@@ -54,8 +52,6 @@ PORTFÓLIO
 ├── 🎓 Formação Acadêmica
 │
 ├── 🛠️ Habilidades Técnicas
-│
-├── 📁 Projetos
 │
 ├── 📄 Currículo
 │
