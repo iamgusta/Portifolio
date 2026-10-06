@@ -10,7 +10,12 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Gustavo | Portfólio</title>
+    <meta
+        name="description"
+        content="Portfólio de Gustavo Lopes com projetos em Engenharia de Dados, Python, SQL, ETL, bancos de dados e desenvolvimento."
+    >
+
+    <title>Gustavo Lopes | Data Engineering</title>
 
     <link
         rel="stylesheet"
@@ -23,26 +28,61 @@
 <body>
 
 
-    <!-- =====================================================
+    <!-- =========================================================
          CABEÇALHO
-    ====================================================== -->
+    ========================================================== -->
 
     <header class="cabecalho">
+
+        <a
+            class="marca"
+            href="#inicio"
+        >
+
+            <span>GL</span>
+
+            <small>
+                / DATA
+            </small>
+
+        </a>
+
 
         <nav class="cabecalho__nav">
 
             <a
                 class="cabecalho__link"
-                href="index.html"
+                href="#projetos"
             >
-                Home
+                Projetos
             </a>
 
             <a
                 class="cabecalho__link"
-                href="About.Html"
+                href="#stack"
             >
-                Sobre mim
+                Stack
+            </a>
+
+            <a
+                class="cabecalho__link"
+                href="#sobre"
+            >
+                Sobre
+            </a>
+
+            <a
+                class="cabecalho__link"
+                href="#gustavo-lab"
+            >
+                Lab
+            </a>
+
+            <a
+                class="cabecalho__link cabecalho__link--destaque"
+                href="#contato"
+            >
+                Contato
             </a>
 
         </nav>
@@ -51,95 +91,232 @@
 
 
 
-    <!-- =====================================================
-         APRESENTAÇÃO
-    ====================================================== -->
-
-    <main class="apresentacao">
-
-        <section class="apresentacao__conteudo">
-
-            <h1 class="apresentacao__titulo">
-
-                Minha evolução construída com dados reais,
-                e com bastante desempenho!
-
-            </h1>
+    <main>
 
 
-            <p class="apresentacao__paragrafo">
+        <!-- =====================================================
+             HOME
+        ====================================================== -->
 
-                Olá, sou Gustavo Lopes, criador de
-                tecnologias digitais inovadoras e eficientes.
-                Gostaria de te convidar a conhecer um pouco
-                mais sobre meu portfólio.
+        <section
+            class="hero"
+            id="inicio"
+        >
 
-            </p>
+            <div class="hero__conteudo">
+
+                <p class="eyebrow">
+                    DATA ENGINEERING / PORTFÓLIO
+                </p>
+
+
+                <h1>
+
+                    Construindo sistemas que transformam
+
+                    <span>
+                        dados em informação.
+                    </span>
+
+                </h1>
+
+
+                <p class="hero__texto">
+
+                    Sou Gustavo Lopes. Desenvolvo projetos com Python,
+                    SQL, ETL, bancos de dados e automação, transformando
+                    dados brutos em estruturas organizadas e úteis.
+
+                </p>
+
+
+                <div class="hero__acoes">
+
+                    <a
+                        class="botao botao--primario"
+                        href="#projetos"
+                    >
+                        Ver projetos
+                    </a>
+
+
+                    <a
+                        class="botao botao--secundario"
+                        href="https://github.com/iamgusta"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        GitHub ↗
+                    </a>
+
+                </div>
+
+
+                <div class="hero__mini-info">
+
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>ETL</span>
+                    <span>Docker</span>
+                    <span>Data Engineering</span>
+
+                </div>
+
+            </div>
 
 
 
             <!-- =================================================
-                 REDES SOCIAIS
+                 DATA DICE
             ================================================== -->
 
-            <div class="apresentacao__links">
+            <div
+                class="dice-area"
+                id="dice-area"
+            >
 
-                <h2 class="titulo-secundario">
+                <div class="dice-area__glow"></div>
 
-                    Acesse minhas redes:
+                <div class="dice-area__smoke dice-area__smoke--um"></div>
 
-                </h2>
+                <div class="dice-area__smoke dice-area__smoke--dois"></div>
 
 
-                <a
-                    class="apresentacao__links__link"
-                    href="https://instagram.com/iamgustavoblack"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <div class="dice-area__topo">
+
+                    <span>
+                        DATA DICE
+                    </span>
+
+                    <span class="dice-online">
+
+                        <i></i>
+
+                        interactive
+
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="dice-scene"
+                    id="dice-scene"
                 >
 
-                    <img
-                        src="assets/instagram.png"
-                        alt="Instagram"
+                    <div
+                        class="dice"
+                        id="dice"
                     >
 
-                    Instagram
 
-                </a>
+                        <!-- FACE 1 -->
+
+                        <div class="dice-face dice-face--front">
+
+                            <span class="pip pip--5"></span>
+
+                        </div>
 
 
-                <a
-                    class="apresentacao__links__link"
-                    href="https://github.com/iamgusta"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
 
-                    <img
-                        src="assets/github.png"
-                        alt="GitHub"
+                        <!-- FACE 6 -->
+
+                        <div class="dice-face dice-face--back">
+
+                            <span class="pip pip--1"></span>
+                            <span class="pip pip--3"></span>
+                            <span class="pip pip--4"></span>
+                            <span class="pip pip--6"></span>
+                            <span class="pip pip--7"></span>
+                            <span class="pip pip--9"></span>
+
+                        </div>
+
+
+
+                        <!-- FACE 3 -->
+
+                        <div class="dice-face dice-face--right">
+
+                            <span class="pip pip--1"></span>
+                            <span class="pip pip--5"></span>
+                            <span class="pip pip--9"></span>
+
+                        </div>
+
+
+
+                        <!-- FACE 4 -->
+
+                        <div class="dice-face dice-face--left">
+
+                            <span class="pip pip--1"></span>
+                            <span class="pip pip--3"></span>
+                            <span class="pip pip--7"></span>
+                            <span class="pip pip--9"></span>
+
+                        </div>
+
+
+
+                        <!-- FACE 2 -->
+
+                        <div class="dice-face dice-face--top">
+
+                            <span class="pip pip--1"></span>
+                            <span class="pip pip--9"></span>
+
+                        </div>
+
+
+
+                        <!-- FACE 5 -->
+
+                        <div class="dice-face dice-face--bottom">
+
+                            <span class="pip pip--1"></span>
+                            <span class="pip pip--3"></span>
+                            <span class="pip pip--5"></span>
+                            <span class="pip pip--7"></span>
+                            <span class="pip pip--9"></span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dice-area__resultado">
+
+                    <div>
+
+                        <small>
+                            ROLL RESULT
+                        </small>
+
+                        <strong id="dice-result">
+                            DATA
+                        </strong>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="dice-roll"
+                        class="dice-roll"
                     >
+                        Rolar dado ↻
+                    </button>
 
-                    GitHub
-
-                </a>
+                </div>
 
 
-                <a
-                    class="apresentacao__links__link"
-                    href="https://www.linkedin.com/in/iamgustavoti/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-
-                    <img
-                        src="assets/linkedin.png"
-                        alt="LinkedIn"
-                    >
-
-                    LinkedIn
-
-                </a>
+                <p class="dice-area__hint">
+                    mova o mouse sobre o dado • clique para girar
+                </p>
 
             </div>
 
@@ -147,183 +324,1254 @@
 
 
 
-        <!-- =================================================
-             FOTO
-        ================================================== -->
+        <!-- =====================================================
+             PROJETOS
+        ====================================================== -->
 
-        <img
-            class="foto-perfil"
-          src="./assets/Minha foto.jpeg"
-            alt="Foto de Gustavo"
+        <section
+            class="secao reveal"
+            id="projetos"
         >
 
-    </main>
+            <div class="secao__cabecalho">
 
+                <div>
 
+                    <p class="eyebrow">
+                        01 / PROJETOS
+                    </p>
 
-    <!-- =====================================================
-         GUSTAVO LAB
-    ====================================================== -->
+                    <h2>
+                        Projetos que fazem parte da minha evolução.
+                    </h2>
 
-    <section
-        class="gustavo-lab"
-        id="gustavo-lab"
-    >
-
-        <div class="gustavo-lab__conteudo">
-
-
-            <!-- =================================================
-                 TÍTULO
-            ================================================== -->
-
-            <h2 class="titulo-secundario">
-
-                🐘​ Gustavo Lab
-
-            </h2>
-
-
-            <p class="lab-descricao">
-
-                Área interativa do meu portfólio,
-                desenvolvida com Python, FastAPI,
-                SQL e MySQL.
-
-            </p>
-
-
-
-            <!-- =================================================
-                 ÁREA DE MENSAGEM
-            ================================================== -->
-
-            <div class="lab-card">
-
-                <h3>
-
-                    👋 Bem-vindo ao Gustavo Lab
-
-                </h3>
+                </div>
 
 
                 <p>
 
-                    Deixe seu nome e, se quiser,
-                    uma mensagem positiva para quem
-                    visitar meu portfólio.
+                    Engenharia de Dados é o meu foco principal,
+                    mas também desenvolvo projetos para fortalecer
+                    minha base em banco de dados, Python e desenvolvimento.
 
                 </p>
-
-
-                <!-- NOME -->
-
-                <input
-                    type="text"
-                    id="nome-visitante"
-                    class="lab-input"
-                    placeholder="Digite seu nome"
-                    maxlength="100"
-                >
-
-
-                <!-- MENSAGEM -->
-
-                <textarea
-                    id="mensagem-positiva"
-                    class="lab-input lab-textarea"
-                    placeholder="Deixe uma mensagem positiva (opcional)"
-                    maxlength="500"
-                ></textarea>
-
-
-                <!-- BOTÃO -->
-
-                <button
-                    type="button"
-                    id="btn-enviar-mensagem"
-                    class="lab-button"
-                >
-
-                     Entrar no Lab
-
-                </button>
-
-
-                <!-- MENSAGEM DE STATUS -->
-
-                <p
-                    id="mensagem-status"
-                    class="lab-mensagem"
-                ></p>
 
             </div>
 
 
 
-            <!-- =================================================
-                 MENSAGENS PÚBLICAS
-            ================================================== -->
-
-            <div class="mensagens-area">
-
-                <h2 class="titulo-secundario">
-
-                    💬 Quem já passou por aqui
-
-                </h2>
+            <div class="projetos-grid">
 
 
-                <p class="mensagens-subtitulo">
+                <!-- =================================================
+                     REAL TIME
+                ================================================== -->
 
-                    Mensagens deixadas pelos visitantes
-                    do Gustavo Lab.
+                <article class="projeto projeto--dados">
 
-                </p>
+                    <div class="projeto__topo">
+
+                        <span class="projeto__numero">
+                            01
+                        </span>
+
+                        <span class="projeto__categoria">
+                            DATA ENGINEERING
+                        </span>
+
+                    </div>
 
 
-                <div id="lista-mensagens">
+                    <div class="arquitetura">
 
-                    <p class="carregando">
+                        <span class="arquitetura__titulo">
+                            REAL-TIME FLOW
+                        </span>
 
-                         Carregando mensagens...
 
+                        <div class="arquitetura__fluxo">
+
+                            <div class="arquitetura__node">
+                                EVENT
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node arquitetura__node--ativo">
+                                KAFKA
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node">
+                                CONSUMER
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node">
+                                CLICKHOUSE
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node">
+                                DASHBOARD
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="projeto__conteudo">
+
+                        <h3>
+                            Real-Time Data Platform
+                        </h3>
+
+                        <p>
+
+                            Plataforma de dados em tempo real para
+                            monitoramento de veículos, trabalhando
+                            com geração, processamento e visualização
+                            contínua de eventos.
+
+                        </p>
+
+
+                        <div class="tags">
+
+                            <span>Python</span>
+                            <span>Kafka</span>
+                            <span>ClickHouse</span>
+                            <span>FastAPI</span>
+                            <span>Docker</span>
+
+                        </div>
+
+
+                        <div class="projeto__acoes">
+
+                            <button
+                                class="projeto__detalhes"
+                                type="button"
+                                data-project="realtime"
+                            >
+                                Ver detalhes
+                            </button>
+
+
+                            <a
+                                class="projeto__link"
+                                href="https://github.com/iamgusta/real-time-data-platform"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                GitHub ↗
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     E-COMMERCE
+                ================================================== -->
+
+                <article class="projeto projeto--dados">
+
+                    <div class="projeto__topo">
+
+                        <span class="projeto__numero">
+                            02
+                        </span>
+
+                        <span class="projeto__categoria">
+                            DATA ENGINEERING
+                        </span>
+
+                    </div>
+
+
+                    <div class="arquitetura">
+
+                        <span class="arquitetura__titulo">
+                            E-COMMERCE DATA FLOW
+                        </span>
+
+
+                        <div class="arquitetura__fluxo">
+
+                            <div class="arquitetura__node">
+                                DATA
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node arquitetura__node--ativo">
+                                AIRFLOW
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node">
+                                ETL
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node">
+                                POSTGRESQL
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node">
+                                POWER BI
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="projeto__conteudo">
+
+                        <h3>
+                            Plataforma de Dados para E-commerce
+                        </h3>
+
+                        <p>
+
+                            Plataforma de dados para e-commerce
+                            com pipeline ETL automatizado,
+                            armazenamento em PostgreSQL,
+                            Data Warehouse e visualização no Power BI.
+
+                        </p>
+
+
+                        <div class="tags">
+
+                            <span>Python</span>
+                            <span>Airflow</span>
+                            <span>Docker</span>
+                            <span>PostgreSQL</span>
+                            <span>Power BI</span>
+
+                        </div>
+
+
+                        <div class="projeto__acoes">
+
+                            <button
+                                class="projeto__detalhes"
+                                type="button"
+                                data-project="ecommerce"
+                            >
+                                Ver detalhes
+                            </button>
+
+
+                            <a
+                                class="projeto__link"
+                                href="https://github.com/iamgusta/Plataforma-dados-e-commerce"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                GitHub ↗
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     PIPELINE DE VENDAS
+                ================================================== -->
+
+                <article class="projeto projeto--dados">
+
+                    <div class="projeto__topo">
+
+                        <span class="projeto__numero">
+                            03
+                        </span>
+
+                        <span class="projeto__categoria">
+                            DATA ENGINEERING
+                        </span>
+
+                    </div>
+
+
+                    <div class="arquitetura">
+
+                        <span class="arquitetura__titulo">
+                            SALES PIPELINE
+                        </span>
+
+
+                        <div class="arquitetura__fluxo">
+
+                            <div class="arquitetura__node">
+                                CSV
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node arquitetura__node--ativo">
+                                PYTHON
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node">
+                                PANDAS
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node">
+                                MYSQL
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node">
+                                POWER BI
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="projeto__conteudo">
+
+                        <h3>
+                            Pipeline de Vendas
+                        </h3>
+
+                        <p>
+
+                            Pipeline de Engenharia de Dados para
+                            ingestão, transformação, armazenamento
+                            e análise de informações de vendas.
+
+                        </p>
+
+
+                        <div class="tags">
+
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>MySQL</span>
+                            <span>Airflow</span>
+                            <span>Power BI</span>
+
+                        </div>
+
+
+                        <div class="projeto__acoes">
+
+                            <button
+                                class="projeto__detalhes"
+                                type="button"
+                                data-project="vendas"
+                            >
+                                Ver detalhes
+                            </button>
+
+
+                            <a
+                                class="projeto__link"
+                                href="https://github.com/iamgusta/Pipeline-de-vendas"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                GitHub ↗
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     CAFETERIA
+                ================================================== -->
+
+                <article class="projeto">
+
+                    <div class="projeto__topo">
+
+                        <span class="projeto__numero">
+                            04
+                        </span>
+
+                        <span class="projeto__categoria">
+                            DATABASE
+                        </span>
+
+                    </div>
+
+
+                    <div class="arquitetura">
+
+                        <span class="arquitetura__titulo">
+                            DATABASE FLOW
+                        </span>
+
+
+                        <div class="arquitetura__fluxo">
+
+                            <div class="arquitetura__node">
+                                ORDERS
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node arquitetura__node--ativo">
+                                PYTHON
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node">
+                                SQLITE
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node">
+                                SQL
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="projeto__conteudo">
+
+                        <h3>
+                            Coffee Shop Database
+                        </h3>
+
+                        <p>
+
+                            Banco de dados desenvolvido para
+                            gerenciamento de vendas, pedidos,
+                            produtos, clientes e operações
+                            de uma cafeteria.
+
+                        </p>
+
+
+                        <div class="tags">
+
+                            <span>Python</span>
+                            <span>SQLite</span>
+                            <span>SQL</span>
+                            <span>Database</span>
+
+                        </div>
+
+
+                        <div class="projeto__acoes">
+
+                            <a
+                                class="projeto__link"
+                                href="https://github.com/iamgusta/cafeteriadatabase"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Abrir projeto ↗
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     CRASHGAME
+                ================================================== -->
+
+                <article class="projeto">
+
+                    <div class="projeto__topo">
+
+                        <span class="projeto__numero">
+                            05
+                        </span>
+
+                        <span class="projeto__categoria">
+                            PYTHON
+                        </span>
+
+                    </div>
+
+
+                    <div class="arquitetura">
+
+                        <span class="arquitetura__titulo">
+                            GAME LOGIC
+                        </span>
+
+
+                        <div class="arquitetura__fluxo">
+
+                            <div class="arquitetura__node">
+                                INPUT
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node arquitetura__node--ativo">
+                                PYTHON
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node">
+                                PYGAME
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node">
+                                GAME
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="projeto__conteudo">
+
+                        <h3>
+                            CrashGAME
+                        </h3>
+
+                        <p>
+
+                            Jogo criado em Python para desenvolver
+                            lógica de programação, eventos, colisões,
+                            pontuação e organização de código.
+
+                        </p>
+
+
+                        <div class="tags">
+
+                            <span>Python</span>
+                            <span>Pygame</span>
+                            <span>Lógica</span>
+
+                        </div>
+
+
+                        <div class="projeto__acoes">
+
+                            <a
+                                class="projeto__link"
+                                href="https://github.com/iamgusta/CrashGAME"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Abrir projeto ↗
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =================================================
+                     PORTFÓLIO
+                ================================================== -->
+
+                <article class="projeto">
+
+                    <div class="projeto__topo">
+
+                        <span class="projeto__numero">
+                            06
+                        </span>
+
+                        <span class="projeto__categoria">
+                            WEB
+                        </span>
+
+                    </div>
+
+
+                    <div class="arquitetura">
+
+                        <span class="arquitetura__titulo">
+                            PORTFOLIO FLOW
+                        </span>
+
+
+                        <div class="arquitetura__fluxo">
+
+                            <div class="arquitetura__node">
+                                HTML
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node">
+                                CSS
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node">
+                                JS
+                            </div>
+
+                            <span class="arquitetura__seta">
+                                →
+                            </span>
+
+                            <div class="arquitetura__node arquitetura__node--ativo">
+                                FASTAPI
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="projeto__conteudo">
+
+                        <h3>
+                            Portfólio Pessoal
+                        </h3>
+
+                        <p>
+
+                            Meu espaço pessoal para apresentar
+                            projetos, tecnologias e minha evolução,
+                            incluindo integração com uma API
+                            através do Gustavo Lab.
+
+                        </p>
+
+
+                        <div class="tags">
+
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                            <span>FastAPI</span>
+
+                        </div>
+
+
+                        <div class="projeto__acoes">
+
+                            <a
+                                class="projeto__link"
+                                href="https://github.com/iamgusta/Portifolio"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Abrir projeto ↗
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             STACK
+        ====================================================== -->
+
+        <section
+            class="secao reveal"
+            id="stack"
+        >
+
+            <div class="secao__cabecalho">
+
+                <div>
+
+                    <p class="eyebrow">
+                        02 / STACK
                     </p>
+
+                    <h2>
+                        Ferramentas organizadas pelo que resolvem.
+                    </h2>
 
                 </div>
 
             </div>
 
 
+            <div class="stack-grid">
+
+
+                <article class="stack-card">
+
+                    <span class="stack-card__indice">
+                        A
+                    </span>
+
+                    <h3>
+                        Dados
+                    </h3>
+
+                    <p>
+                        Python · Pandas · ETL · Kafka · Tratamento de dados
+                    </p>
+
+                </article>
+
+
+                <article class="stack-card">
+
+                    <span class="stack-card__indice">
+                        B
+                    </span>
+
+                    <h3>
+                        Bancos de dados
+                    </h3>
+
+                    <p>
+                        SQL · MySQL · PostgreSQL · SQLite · ClickHouse
+                    </p>
+
+                </article>
+
+
+                <article class="stack-card">
+
+                    <span class="stack-card__indice">
+                        C
+                    </span>
+
+                    <h3>
+                        Pipeline & Infra
+                    </h3>
+
+                    <p>
+                        Docker · Airflow · FastAPI · Git · GitHub
+                    </p>
+
+                </article>
+
+
+                <article class="stack-card">
+
+                    <span class="stack-card__indice">
+                        D
+                    </span>
+
+                    <h3>
+                        Análise
+                    </h3>
+
+                    <p>
+                        Power BI · Excel · SQL · Indicadores
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             SOBRE
+        ====================================================== -->
+
+        <section
+            class="secao sobre reveal"
+            id="sobre"
+        >
+
+            <div class="sobre__visual">
+
+                <div class="sobre__foto-wrapper">
+
+                    <img
+                        src="./assets/minha foto.jpeg"
+                        alt="Foto de Gustavo Lopes"
+                        class="sobre__foto"
+                    >
+
+                    <span class="sobre__etiqueta">
+                        GUSTAVO LOPES / AL
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="sobre__conteudo">
+
+                <p class="eyebrow">
+                    03 / SOBRE
+                </p>
+
+
+                <h2>
+                    Dados, tecnologia e vontade de construir melhor.
+                </h2>
+
+
+                <p>
+
+                    Minha trajetória profissional passou por áreas
+                    administrativas, estoque e e-commerce.
+
+                    Hoje, uso essa visão de processos para construir
+                    projetos voltados a dados, automação e organização
+                    da informação.
+
+                </p>
+
+
+                <p>
+
+                    Curso Sistemas de Informação e venho direcionando
+                    meus estudos e projetos para Engenharia de Dados,
+                    principalmente com Python, SQL e bancos de dados.
+
+                </p>
+
+
+                <div class="sobre__acoes">
+
+                    <a
+                        class="botao botao--secundario"
+                        href="About.Html"
+                    >
+                        Conhecer trajetória
+                    </a>
+
+
+                    <a
+                        class="link-texto"
+                        href="Curriculo.pdf"
+                        target="_blank"
+                    >
+                        Abrir currículo ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             GUSTAVO LAB
+        ====================================================== -->
+
+        <section
+            class="gustavo-lab reveal"
+            id="gustavo-lab"
+        >
+
+            <div class="gustavo-lab__conteudo">
+
+
+                <div class="secao__cabecalho">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            04 / GUSTAVO LAB
+                        </p>
+
+                        <h2>
+                            Uma parte do portfólio que realmente funciona.
+                        </h2>
+
+                    </div>
+
+
+                    <p>
+
+                        O Lab conecta o front-end a uma API em Python
+                        para registrar e carregar mensagens deixadas
+                        pelos visitantes.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="lab-grid">
+
+
+                    <div class="lab-card">
+
+                        <div class="lab-card__topo">
+
+                            <span>
+                                POST /mensagens
+                            </span>
+
+
+                            <span class="status">
+
+                                <i></i>
+
+                                API
+
+                            </span>
+
+                        </div>
+
+
+                        <h3>
+                            Deixe sua marca por aqui.
+                        </h3>
+
+
+                        <p>
+
+                            Escreva seu nome e, se quiser,
+                            uma mensagem curta para quem visitar
+                            o portfólio depois de você.
+
+                        </p>
+
+
+                        <label for="nome-visitante">
+                            Seu nome
+                        </label>
+
+
+                        <input
+                            type="text"
+                            id="nome-visitante"
+                            class="lab-input"
+                            placeholder="Digite seu nome"
+                            maxlength="100"
+                        >
+
+
+                        <label for="mensagem-positiva">
+                            Mensagem
+                        </label>
+
+
+                        <textarea
+                            id="mensagem-positiva"
+                            class="lab-input lab-textarea"
+                            placeholder="Deixe uma mensagem positiva (opcional)"
+                            maxlength="500"
+                        ></textarea>
+
+
+                        <button
+                            type="button"
+                            id="btn-enviar-mensagem"
+                            class="lab-button"
+                        >
+                            Enviar mensagem
+                        </button>
+
+
+                        <p
+                            id="mensagem-status"
+                            class="lab-mensagem"
+                        ></p>
+
+                    </div>
+
+
+
+                    <div class="mensagens-area">
+
+                        <div class="mensagens-area__topo">
+
+                            <span class="mensagens-area__rota">
+                                GET /mensagens
+                            </span>
+
+
+                            <h3>
+                                Quem já passou por aqui
+                            </h3>
+
+                        </div>
+
+
+                        <div id="lista-mensagens">
+
+                            <p class="carregando">
+                                Carregando mensagens...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             CONTATO
+        ====================================================== -->
+
+        <section
+            class="contato reveal"
+            id="contato"
+        >
+
+            <p class="eyebrow">
+                05 / CONTATO
+            </p>
+
+
+            <h2>
+                Vamos conversar sobre dados?
+            </h2>
+
+
+            <p>
+
+                Estou aberto a oportunidades,
+                projetos e conexões na área
+                de tecnologia e dados.
+
+            </p>
+
+
+            <div class="contato__links">
+
+                <a href="mailto:Gustavolopesti@outlook.com">
+                    E-mail ↗
+                </a>
+
+
+                <a
+                    href="https://www.linkedin.com/in/iamgustavoti/"
+                    target="_blank"
+                >
+                    LinkedIn ↗
+                </a>
+
+
+                <a
+                    href="https://github.com/iamgusta"
+                    target="_blank"
+                >
+                    GitHub ↗
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================================================
+         MODAL DOS PROJETOS
+    ========================================================== -->
+
+    <div
+        class="modal"
+        id="project-modal"
+        aria-hidden="true"
+    >
+
+        <div
+            class="modal__overlay"
+            data-close-modal
+        ></div>
+
+
+        <div class="modal__conteudo">
+
+            <button
+                type="button"
+                class="modal__fechar"
+                data-close-modal
+                aria-label="Fechar"
+            >
+                ×
+            </button>
+
+
+            <p
+                class="modal__categoria"
+                id="modal-category"
+            >
+                DATA ENGINEERING
+            </p>
+
+
+            <h2 id="modal-title">
+                Projeto
+            </h2>
+
+
+            <p
+                class="modal__descricao"
+                id="modal-description"
+            ></p>
+
+
+            <div class="modal__bloco">
+
+                <small>
+                    ARQUITETURA
+                </small>
+
+                <div
+                    class="modal__flow"
+                    id="modal-flow"
+                ></div>
+
+            </div>
+
+
+            <div class="modal__bloco">
+
+                <small>
+                    TECNOLOGIAS
+                </small>
+
+                <div
+                    class="modal__tags"
+                    id="modal-tags"
+                ></div>
+
+            </div>
+
+
+            <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="botao botao--primario"
+                id="modal-github"
+            >
+                Abrir GitHub ↗
+            </a>
+
         </div>
 
-    </section>
+    </div>
 
 
 
-    <!-- =====================================================
+    <!-- =========================================================
          RODAPÉ
-    ====================================================== -->
+    ========================================================== -->
 
     <footer class="rodape">
 
         <p>
+            Gustavo Lopes
+        </p>
 
-            Desenvolvedor Gustavo Lopes
+
+        <p>
+
+            Data Engineering Portfolio ·
+
+            <span id="ano-atual">
+                2026
+            </span>
 
         </p>
 
     </footer>
 
 
-
-    <!-- =====================================================
-         JAVASCRIPT
-    ====================================================== -->
-
-    <script
-        src="./script/script.js"
-    ></script>
+    <script src="./script/script.js"></script>
 
 
 </body>
