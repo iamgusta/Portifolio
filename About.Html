@@ -23,7 +23,7 @@
         href="./Style/Style.Css"
     >
 
-    <!-- CSS da página Sobre -->
+    <!-- CSS da página About -->
     <link
         rel="stylesheet"
         href="./Style/About.css"
@@ -100,7 +100,7 @@
              ABERTURA
         ====================================================== -->
 
-        <section class="sobre-hero">
+        <section class="sobre-hero reveal-about">
 
 
             <div class="sobre-hero__conteudo">
@@ -139,11 +139,11 @@
                     <a
                         href="Curriculo.pdf"
                         target="_blank"
+                        rel="noopener noreferrer"
                         class="botao botao--primario"
                     >
                         Abrir currículo ↗
                     </a>
-
 
                     <a
                         href="index.html#projetos"
@@ -159,30 +159,111 @@
 
 
             <!-- =================================================
-                 FOTO
+                 CUBO DE DADOS
             ================================================== -->
 
             <div class="sobre-hero__visual">
 
+                <div
+                    class="data-block"
+                    id="data-block"
+                >
 
-                <div class="sobre-foto">
+                    <div class="data-block__grid"></div>
+                    <div class="data-block__glow"></div>
 
-
-                    <img
-                        src="./assets/minha foto.jpeg"
-                        alt="Foto de Gustavo Lopes"
+                    <div
+                        class="data-block__scene"
+                        id="data-block-scene"
                     >
 
+                        <div
+                            class="data-block__cube"
+                            id="data-block-cube"
+                        >
 
-                    <div class="sobre-foto__info">
+                            <!-- CAMADA SUPERIOR -->
 
-                        <span>
-                            GUSTAVO LOPES
+                            <span class="data-piece p01"></span>
+                            <span class="data-piece p02"></span>
+                            <span class="data-piece p03"></span>
+
+                            <span class="data-piece p04"></span>
+                            <span class="data-piece p05 data-piece--core"></span>
+                            <span class="data-piece p06"></span>
+
+                            <span class="data-piece p07"></span>
+                            <span class="data-piece p08"></span>
+                            <span class="data-piece p09"></span>
+
+
+                            <!-- CAMADA CENTRAL -->
+
+                            <span class="data-piece p10"></span>
+                            <span class="data-piece p11"></span>
+                            <span class="data-piece p12"></span>
+
+                            <span class="data-piece p13"></span>
+                            <span class="data-piece p14"></span>
+                            <span class="data-piece p15"></span>
+
+                            <span class="data-piece p16"></span>
+                            <span class="data-piece p17"></span>
+                            <span class="data-piece p18"></span>
+
+
+                            <!-- CAMADA INFERIOR -->
+
+                            <span class="data-piece p19"></span>
+                            <span class="data-piece p20"></span>
+                            <span class="data-piece p21"></span>
+
+                            <span class="data-piece p22"></span>
+                            <span class="data-piece p23"></span>
+                            <span class="data-piece p24"></span>
+
+                            <span class="data-piece p25"></span>
+                            <span class="data-piece p26"></span>
+                            <span class="data-piece p27"></span>
+
+                        </div>
+
+
+                        <!-- BLOCOS FLUTUANTES -->
+
+                        <span class="floating-cube floating-cube--1"></span>
+                        <span class="floating-cube floating-cube--2"></span>
+                        <span class="floating-cube floating-cube--3"></span>
+                        <span class="floating-cube floating-cube--4"></span>
+                        <span class="floating-cube floating-cube--5"></span>
+                        <span class="floating-cube floating-cube--6"></span>
+                        <span class="floating-cube floating-cube--7"></span>
+
+                    </div>
+
+
+                    <div class="data-block__info">
+
+                        <div>
+
+                            <small>
+                                DATA PROFILE
+                            </small>
+
+                            <strong>
+                                Engenharia de Dados
+                            </strong>
+
+                        </div>
+
+
+                        <span class="data-block__status">
+
+                            <i></i>
+
+                            em evolução
+
                         </span>
-
-                        <small>
-                            DATA ENGINEERING
-                        </small>
 
                     </div>
 
@@ -207,9 +288,7 @@
 
                 </div>
 
-
             </div>
-
 
         </section>
 
@@ -219,7 +298,7 @@
              QUEM SOU
         ====================================================== -->
 
-        <section class="sobre-secao">
+        <section class="sobre-secao reveal-about">
 
 
             <div class="sobre-secao__numero">
@@ -239,9 +318,7 @@
                     Tecnologia começou como interesse e virou direção.
                 </h2>
 
-
             </div>
-
 
 
             <div class="sobre-secao__texto">
@@ -280,9 +357,7 @@
 
                 </p>
 
-
             </div>
-
 
         </section>
 
@@ -292,7 +367,7 @@
              TRAJETÓRIA
         ====================================================== -->
 
-        <section class="trajetoria">
+        <section class="trajetoria reveal-about">
 
 
             <div class="trajetoria__cabecalho">
@@ -307,9 +382,7 @@
                     Experiências que ajudaram a construir minha base.
                 </h2>
 
-
             </div>
-
 
 
             <div class="timeline">
@@ -321,13 +394,11 @@
 
 
                     <div class="timeline__marcador">
-
                         <span></span>
-
                     </div>
 
 
-                    <div class="timeline__conteudo">
+                    <div class="timeline__conteudo interaction-card">
 
 
                         <div class="timeline__topo">
@@ -344,11 +415,12 @@
 
 
                         <h3>
-                            Jovem Aprendiz 
+                            Jovem Aprendiz
+                        </h3>
 
 
                         <h4>
-                            Yakult S/A 
+                            Yakult S/A
                         </h4>
 
 
@@ -361,9 +433,7 @@
 
                         </p>
 
-
                     </div>
-
 
                 </article>
 
@@ -375,13 +445,11 @@
 
 
                     <div class="timeline__marcador">
-
                         <span></span>
-
                     </div>
 
 
-                    <div class="timeline__conteudo">
+                    <div class="timeline__conteudo interaction-card">
 
 
                         <div class="timeline__topo">
@@ -398,7 +466,7 @@
 
 
                         <h3>
-                        Estoquista em produtos automotivos
+                            Estoquista em produtos automotivos
                         </h3>
 
 
@@ -416,9 +484,7 @@
 
                         </p>
 
-
                     </div>
-
 
                 </article>
 
@@ -430,13 +496,11 @@
 
 
                     <div class="timeline__marcador">
-
                         <span></span>
-
                     </div>
 
 
-                    <div class="timeline__conteudo">
+                    <div class="timeline__conteudo interaction-card">
 
 
                         <div class="timeline__topo">
@@ -472,9 +536,7 @@
 
                         </p>
 
-
                     </div>
-
 
                 </article>
 
@@ -486,13 +548,11 @@
 
 
                     <div class="timeline__marcador">
-
                         <span></span>
-
                     </div>
 
 
-                    <div class="timeline__conteudo">
+                    <div class="timeline__conteudo interaction-card">
 
 
                         <div class="timeline__topo">
@@ -527,9 +587,7 @@
 
                         </p>
 
-
                     </div>
-
 
                 </article>
 
@@ -541,13 +599,11 @@
 
 
                     <div class="timeline__marcador">
-
                         <span></span>
-
                     </div>
 
 
-                    <div class="timeline__conteudo">
+                    <div class="timeline__conteudo interaction-card">
 
 
                         <div class="timeline__topo">
@@ -582,15 +638,12 @@
 
                         </p>
 
-
                     </div>
-
 
                 </article>
 
 
             </div>
-
 
         </section>
 
@@ -600,7 +653,7 @@
              COMO EU TRABALHO
         ====================================================== -->
 
-        <section class="forma-trabalho">
+        <section class="forma-trabalho reveal-about">
 
 
             <div class="forma-trabalho__cabecalho">
@@ -615,16 +668,13 @@
                     Mais do que ferramentas, gosto de entender o processo.
                 </h2>
 
-
             </div>
-
 
 
             <div class="forma-trabalho__grid">
 
 
-                <article class="forma-card">
-
+                <article class="forma-card interaction-card">
 
                     <span>
                         01
@@ -645,13 +695,11 @@
 
                     </p>
 
-
                 </article>
 
 
 
-                <article class="forma-card">
-
+                <article class="forma-card interaction-card">
 
                     <span>
                         02
@@ -672,13 +720,11 @@
 
                     </p>
 
-
                 </article>
 
 
 
-                <article class="forma-card">
-
+                <article class="forma-card interaction-card">
 
                     <span>
                         03
@@ -698,12 +744,10 @@
 
                     </p>
 
-
                 </article>
 
 
             </div>
-
 
         </section>
 
@@ -713,7 +757,7 @@
              FOCO ATUAL
         ====================================================== -->
 
-        <section class="foco-atual">
+        <section class="foco-atual reveal-about">
 
 
             <div class="foco-atual__conteudo">
@@ -738,48 +782,130 @@
                 </p>
 
 
+                <div class="foco-atual__stack">
+
+                    <div data-tech="PYTHON">
+                        <span>PYTHON</span>
+                    </div>
+
+                    <div data-tech="SQL">
+                        <span>SQL</span>
+                    </div>
+
+                    <div data-tech="POSTGRESQL">
+                        <span>POSTGRESQL</span>
+                    </div>
+
+                    <div data-tech="MYSQL">
+                        <span>MYSQL</span>
+                    </div>
+
+                    <div data-tech="DOCKER">
+                        <span>DOCKER</span>
+                    </div>
+
+                    <div data-tech="AIRFLOW">
+                        <span>AIRFLOW</span>
+                    </div>
+
+                    <div data-tech="KAFKA">
+                        <span>KAFKA</span>
+                    </div>
+
+                    <div data-tech="FASTAPI">
+                        <span>FASTAPI</span>
+                    </div>
+
+                </div>
+
             </div>
 
 
 
-            <div class="foco-atual__stack">
+            <!-- =================================================
+                 CUBO INTERNO / EXTERNO
+            ================================================== -->
+
+            <div class="core-visual">
 
 
-                <div>
-                    <span>PYTHON</span>
+                <div class="core-visual__top">
+
+                    <span>
+                        DATA CORE
+                    </span>
+
+                    <span>
+                        INTERACTIVE
+                    </span>
+
                 </div>
 
-                <div>
-                    <span>SQL</span>
+
+                <div
+                    class="core-scene"
+                    id="core-scene"
+                >
+
+                    <div
+                        class="outer-cube"
+                        id="outer-cube"
+                    >
+
+                        <div class="outer-face outer-face--front"></div>
+                        <div class="outer-face outer-face--back"></div>
+                        <div class="outer-face outer-face--right"></div>
+                        <div class="outer-face outer-face--left"></div>
+                        <div class="outer-face outer-face--top"></div>
+                        <div class="outer-face outer-face--bottom"></div>
+
+
+                        <div class="inner-cube">
+
+                            <div class="inner-face inner-face--front">
+                                DATA
+                            </div>
+
+                            <div class="inner-face inner-face--back">
+                                SQL
+                            </div>
+
+                            <div class="inner-face inner-face--right">
+                                ETL
+                            </div>
+
+                            <div class="inner-face inner-face--left">
+                                API
+                            </div>
+
+                            <div class="inner-face inner-face--top">
+                                PY
+                            </div>
+
+                            <div class="inner-face inner-face--bottom">
+                                DW
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div>
-                    <span>POSTGRESQL</span>
-                </div>
 
-                <div>
-                    <span>MYSQL</span>
-                </div>
+                <div class="core-visual__resultado">
 
-                <div>
-                    <span>DOCKER</span>
-                </div>
+                    <small>
+                        CURRENT FOCUS
+                    </small>
 
-                <div>
-                    <span>AIRFLOW</span>
-                </div>
+                    <strong id="core-result">
+                        DATA ENGINEERING
+                    </strong>
 
-                <div>
-                    <span>KAFKA</span>
                 </div>
-
-                <div>
-                    <span>FASTAPI</span>
-                </div>
-
 
             </div>
-
 
         </section>
 
@@ -789,7 +915,7 @@
              FINAL
         ====================================================== -->
 
-        <section class="sobre-final">
+        <section class="sobre-final reveal-about">
 
 
             <p class="eyebrow">
@@ -810,14 +936,12 @@
 
             <div class="sobre-final__acoes">
 
-
                 <a
                     href="index.html#projetos"
                     class="botao botao--primario"
                 >
                     Conhecer meus projetos
                 </a>
-
 
                 <a
                     href="https://github.com/iamgusta"
@@ -828,9 +952,7 @@
                     GitHub ↗
                 </a>
 
-
             </div>
-
 
         </section>
 
@@ -845,18 +967,20 @@
 
     <footer class="rodape">
 
-
         <p>
             Gustavo Lopes
         </p>
-
 
         <p>
             Data Engineering Portfolio · 2026
         </p>
 
-
     </footer>
+
+
+    <!-- SCRIPT DO ABOUT -->
+
+    <script src="./script/about.js"></script>
 
 
 </body>
