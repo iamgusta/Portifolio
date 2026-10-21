@@ -1,24 +1,32 @@
 // ============================================================
-// ABOUT.JS
-// Interações da página Sobre
+// ABOUT V3
 // ============================================================
 
 
+const reduzirMovimento =
+    window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+
 
 // ============================================================
-// ANIMAÇÃO DAS SEÇÕES AO ENTRAR NA TELA
+// THREE BACKGROUND
 // ============================================================
 
-function iniciarRevealAbout() {
+function iniciarWebGL() {
 
-    const elementos =
-        document.querySelectorAll(
-            ".reveal-about"
+    const container =
+        document.getElementById(
+            "webgl-bg"
         );
 
 
     if (
-        !elementos.length
+        !container ||
+        typeof THREE ===
+            "undefined" ||
+        reduzirMovimento
     ) {
 
         return;
@@ -26,48 +34,259 @@ function iniciarRevealAbout() {
     }
 
 
-    if (
-        !(
-            "IntersectionObserver"
-            in window
+    const scene =
+        new THREE.Scene();
+
+
+    const camera =
+        new THREE.PerspectiveCamera(
+            60,
+            window.innerWidth /
+            window.innerHeight,
+            0.1,
+            300
+        );
+
+
+    camera.position.z =
+        30;
+
+
+    const renderer =
+        new THREE.WebGLRenderer({
+            alpha: true,
+            antialias: true
+        });
+
+
+    renderer.setPixelRatio(
+        Math.min(
+            window.devicePixelRatio,
+            2
         )
+    );
+
+
+    renderer.setSize(
+        window.innerWidth,
+        window.innerHeight
+    );
+
+
+    container.appendChild(
+        renderer.domElement
+    );
+
+
+    const quantidade =
+        window.innerWidth < 700
+            ? 600
+            : 1350;
+
+
+    const positions =
+        new Float32Array(
+            quantidade * 3
+        );
+
+
+    for (
+        let i = 0;
+        i < quantidade;
+        i++
     ) {
 
-        elementos.forEach(
-            (elemento) => {
+        positions[
+            i * 3
+        ] =
+            (
+                Math.random() -
+                0.5
+            ) * 95;
 
-                elemento.classList.add(
-                    "visivel"
+
+        positions[
+            i * 3 + 1
+        ] =
+            (
+                Math.random() -
+                0.5
+            ) * 60;
+
+
+        positions[
+            i * 3 + 2
+        ] =
+            Math.random() *
+            -120;
+
+    }
+
+
+    const geometry =
+        new THREE.BufferGeometry();
+
+
+    geometry.setAttribute(
+        "position",
+        new THREE.BufferAttribute(
+            positions,
+            3
+        )
+    );
+
+
+    const material =
+        new THREE.PointsMaterial({
+            color:
+                new THREE.Color(
+                    "#4f8cff"
+                ),
+
+            size:
+                0.1,
+
+            transparent:
+                true,
+
+            opacity:
+                0.65,
+
+            blending:
+                THREE.AdditiveBlending,
+
+            depthWrite:
+                false
+        });
+
+
+    const particles =
+        new THREE.Points(
+            geometry,
+            material
+        );
+
+
+    scene.add(
+        particles
+    );
+
+
+    let mouseX =
+        0;
+
+
+    let mouseY =
+        0;
+
+
+    let scrollForce =
+        0.03;
+
+
+    let lastScroll =
+        window.scrollY;
+
+
+    window.addEventListener(
+        "pointermove",
+        (event) => {
+
+            mouseX =
+                (
+                    event.clientX /
+                    window.innerWidth -
+                    0.5
                 );
 
-            }
+
+            mouseY =
+                (
+                    event.clientY /
+                    window.innerHeight -
+                    0.5
+                );
+
+        }
+    );
+
+
+    window.addEventListener(
+        "scroll",
+        () => {
+
+            const atual =
+                window.scrollY;
+
+
+            const delta =
+                Math.abs(
+                    atual -
+                    lastScroll
+                );
+
+
+            scrollForce =
+                Math.min(
+                    0.2,
+                    0.03 +
+                    delta * 0.002
+                );
+
+
+            lastScroll =
+                atual;
+
+        },
+        {
+            passive:
+                true
+        }
+    );
+
+
+    const sections =
+        document.querySelectorAll(
+            "[data-particle]"
         );
-
-
-        return;
-
-    }
 
 
     const observer =
         new IntersectionObserver(
+            (entries) => {
 
-            (entradas) => {
-
-                entradas.forEach(
-                    (entrada) => {
+                entries.forEach(
+                    (entry) => {
 
                         if (
-                            entrada.isIntersecting
+                            entry.isIntersecting &&
+                            typeof gsap !==
+                                "undefined"
                         ) {
 
-                            entrada.target.classList.add(
-                                "visivel"
-                            );
+                            const target =
+                                new THREE.Color(
+                                    entry.target
+                                        .dataset
+                                        .particle
+                                );
 
 
-                            observer.unobserve(
-                                entrada.target
+                            gsap.to(
+                                material.color,
+                                {
+                                    r:
+                                        target.r,
+
+                                    g:
+                                        target.g,
+
+                                    b:
+                                        target.b,
+
+                                    duration:
+                                        1.2
+                                }
                             );
 
                         }
@@ -76,360 +295,116 @@ function iniciarRevealAbout() {
                 );
 
             },
-
             {
-                threshold:
-                    0.10
+                rootMargin:
+                    "-35% 0px -35% 0px"
             }
-
         );
 
 
-    elementos.forEach(
-        (elemento) => {
+    sections.forEach(
+        (section) => {
 
             observer.observe(
-                elemento
-            );
-
-        }
-    );
-
-}
-
-
-
-// ============================================================
-// CUBO DE DADOS DO HERO
-// ============================================================
-
-function iniciarDataBlock() {
-
-    const area =
-        document.getElementById(
-            "data-block"
-        );
-
-
-    const cube =
-        document.getElementById(
-            "data-block-cube"
-        );
-
-
-    if (
-        !area ||
-        !cube
-    ) {
-
-        return;
-
-    }
-
-
-    const reduzirMovimento =
-        window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches;
-
-
-    if (
-        reduzirMovimento
-    ) {
-
-        return;
-
-    }
-
-
-    let alvoX =
-        0;
-
-
-    let alvoY =
-        0;
-
-
-    let atualX =
-        0;
-
-
-    let atualY =
-        0;
-
-
-    let tempo =
-        0;
-
-
-
-    // ========================================================
-    // MOUSE
-    // ========================================================
-
-    area.addEventListener(
-        "mousemove",
-        (evento) => {
-
-            const rect =
-                area.getBoundingClientRect();
-
-
-            const x =
-                (
-                    evento.clientX -
-                    rect.left
-                )
-                /
-                rect.width;
-
-
-            const y =
-                (
-                    evento.clientY -
-                    rect.top
-                )
-                /
-                rect.height;
-
-
-            alvoX =
-                (
-                    x - 0.5
-                ) * 24;
-
-
-            alvoY =
-                (
-                    y - 0.5
-                ) * -18;
-
-        }
-    );
-
-
-
-    area.addEventListener(
-        "mouseleave",
-        () => {
-
-            alvoX =
-                0;
-
-
-            alvoY =
-                0;
-
-        }
-    );
-
-
-
-    // ========================================================
-    // CLIQUE
-    // Faz o cubo dar um pequeno impacto
-    // ========================================================
-
-    area.addEventListener(
-        "click",
-        () => {
-
-            area.classList.remove(
-                "data-block--impacto"
-            );
-
-
-            void area.offsetWidth;
-
-
-            area.classList.add(
-                "data-block--impacto"
-            );
-
-
-            setTimeout(
-                () => {
-
-                    area.classList.remove(
-                        "data-block--impacto"
-                    );
-
-                },
-
-                550
+                section
             );
 
         }
     );
 
 
+    function render() {
 
-    // ========================================================
-    // LOOP
-    // ========================================================
-
-    function animar() {
-
-        tempo +=
-            0.015;
+        particles.rotation.y +=
+            mouseX *
+            0.0006;
 
 
-        atualX +=
+        particles.rotation.x +=
+            mouseY *
+            0.00025;
+
+
+        const array =
+            geometry
+                .attributes
+                .position
+                .array;
+
+
+        for (
+            let i = 0;
+            i < quantidade;
+            i++
+        ) {
+
+            const index =
+                i * 3 + 2;
+
+
+            array[index] +=
+                scrollForce;
+
+
+            if (
+                array[index] >
+                20
+            ) {
+
+                array[index] =
+                    -120;
+
+            }
+
+        }
+
+
+        geometry
+            .attributes
+            .position
+            .needsUpdate =
+            true;
+
+
+        scrollForce +=
             (
-                alvoX -
-                atualX
-            ) * 0.07;
+                0.03 -
+                scrollForce
+            ) * 0.03;
 
 
-        atualY +=
-            (
-                alvoY -
-                atualY
-            ) * 0.07;
-
-
-        const flutuacaoX =
-            Math.sin(
-                tempo
-            ) * 1.4;
-
-
-        const flutuacaoY =
-            Math.cos(
-                tempo * 0.8
-            ) * 1.7;
-
-
-        area.style.setProperty(
-            "--mouse-x",
-            `${atualX + flutuacaoX}deg`
-        );
-
-
-        area.style.setProperty(
-            "--mouse-y",
-            `${atualY + flutuacaoY}deg`
+        renderer.render(
+            scene,
+            camera
         );
 
 
         requestAnimationFrame(
-            animar
+            render
         );
 
     }
 
 
-    requestAnimationFrame(
-        animar
-    );
-
-}
+    render();
 
 
+    window.addEventListener(
+        "resize",
+        () => {
 
-// ============================================================
-// CARDS COM EFEITO 3D
-// ============================================================
-
-function iniciarCards3D() {
-
-    const cards =
-        document.querySelectorAll(
-            ".interaction-card"
-        );
+            camera.aspect =
+                window.innerWidth /
+                window.innerHeight;
 
 
-    const reduzirMovimento =
-        window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches;
+            camera.updateProjectionMatrix();
 
 
-    if (
-        reduzirMovimento
-    ) {
-
-        return;
-
-    }
-
-
-    cards.forEach(
-        (card) => {
-
-
-            card.addEventListener(
-                "mousemove",
-                (evento) => {
-
-                    const rect =
-                        card.getBoundingClientRect();
-
-
-                    const x =
-                        (
-                            evento.clientX -
-                            rect.left
-                        )
-                        /
-                        rect.width;
-
-
-                    const y =
-                        (
-                            evento.clientY -
-                            rect.top
-                        )
-                        /
-                        rect.height;
-
-
-                    const rotateY =
-                        (
-                            x - 0.5
-                        ) * 4;
-
-
-                    const rotateX =
-                        (
-                            y - 0.5
-                        ) * -4;
-
-
-                    card.style.setProperty(
-                        "--rotate-x",
-                        `${rotateX}deg`
-                    );
-
-
-                    card.style.setProperty(
-                        "--rotate-y",
-                        `${rotateY}deg`
-                    );
-
-                }
+            renderer.setSize(
+                window.innerWidth,
+                window.innerHeight
             );
-
-
-
-            card.addEventListener(
-                "mouseleave",
-                () => {
-
-                    card.style.setProperty(
-                        "--rotate-x",
-                        "0deg"
-                    );
-
-
-                    card.style.setProperty(
-                        "--rotate-y",
-                        "0deg"
-                    );
-
-                }
-            );
-
 
         }
     );
@@ -439,26 +414,30 @@ function iniciarCards3D() {
 
 
 // ============================================================
-// CUBO DATA CORE
+// CURSOR
 // ============================================================
 
-function iniciarDataCore() {
+function iniciarCursor() {
 
-    const scene =
+    const ring =
         document.getElementById(
-            "core-scene"
+            "cursor-ring"
         );
 
 
-    const cube =
+    const dot =
         document.getElementById(
-            "outer-cube"
+            "cursor-dot"
         );
 
 
     if (
-        !scene ||
-        !cube
+        !ring ||
+        !dot ||
+        reduzirMovimento ||
+        window.matchMedia(
+            "(hover: none)"
+        ).matches
     ) {
 
         return;
@@ -466,235 +445,298 @@ function iniciarDataCore() {
     }
 
 
-    const reduzirMovimento =
-        window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        ).matches;
+    document.body.classList.add(
+        "cursor-active"
+    );
 
 
-    let alvoX =
-        -20;
+    let targetX =
+        window.innerWidth / 2;
 
 
-    let alvoY =
-        35;
+    let targetY =
+        window.innerHeight / 2;
 
 
-    let atualX =
-        alvoX;
+    let currentX =
+        targetX;
 
 
-    let atualY =
-        alvoY;
+    let currentY =
+        targetY;
 
 
-    let mouseAtivo =
-        false;
+    window.addEventListener(
+        "pointermove",
+        (event) => {
+
+            targetX =
+                event.clientX;
 
 
-    let tempo =
-        0;
+            targetY =
+                event.clientY;
+
+
+            dot.style.left =
+                `${targetX}px`;
+
+
+            dot.style.top =
+                `${targetY}px`;
+
+        }
+    );
+
+
+    document
+        .querySelectorAll(
+            "a, button"
+        )
+        .forEach(
+            (element) => {
+
+                element.addEventListener(
+                    "mouseenter",
+                    () => {
+
+                        document.body
+                            .classList
+                            .add(
+                                "cursor-hover"
+                            );
+
+                    }
+                );
+
+
+                element.addEventListener(
+                    "mouseleave",
+                    () => {
+
+                        document.body
+                            .classList
+                            .remove(
+                                "cursor-hover"
+                            );
+
+                    }
+                );
+
+            }
+        );
+
+
+    function render() {
+
+        currentX +=
+            (
+                targetX -
+                currentX
+            ) * 0.16;
+
+
+        currentY +=
+            (
+                targetY -
+                currentY
+            ) * 0.16;
+
+
+        ring.style.left =
+            `${currentX}px`;
+
+
+        ring.style.top =
+            `${currentY}px`;
+
+
+        requestAnimationFrame(
+            render
+        );
+
+    }
+
+
+    render();
+
+}
 
 
 
-    // ========================================================
-    // MOUSE
-    // ========================================================
+// ============================================================
+// FOTO
+// ============================================================
 
-    scene.addEventListener(
-        "mousemove",
-        (evento) => {
+function iniciarFoto() {
 
-            if (
-                reduzirMovimento
-            ) {
+    const world =
+        document.getElementById(
+            "about-photo-world"
+        );
 
-                return;
+
+    if (
+        !world ||
+        reduzirMovimento
+    ) {
+
+        return;
+
+    }
+
+
+    const layers =
+        world.querySelectorAll(
+            "[data-depth]"
+        );
+
+
+    world.addEventListener(
+        "pointermove",
+        (event) => {
+
+            const rect =
+                world.getBoundingClientRect();
+
+
+            const x =
+                (
+                    event.clientX -
+                    rect.left
+                )
+                /
+                rect.width -
+                0.5;
+
+
+            const y =
+                (
+                    event.clientY -
+                    rect.top
+                )
+                /
+                rect.height -
+                0.5;
+
+
+            layers.forEach(
+                (layer) => {
+
+                    const depth =
+                        Number(
+                            layer.dataset.depth
+                        ) || 1;
+
+
+                    layer.style.translate =
+                        `
+                            ${x * 18 * depth}px
+                            ${y * 14 * depth}px
+                        `;
+
+                }
+            );
+
+        }
+    );
+
+
+    world.addEventListener(
+        "pointerleave",
+        () => {
+
+            layers.forEach(
+                (layer) => {
+
+                    layer.style.translate =
+                        "0px 0px";
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+
+// ============================================================
+// FOCUS TECH
+// ============================================================
+
+function iniciarFocusTech() {
+
+    const buttons =
+        document.querySelectorAll(
+            "[data-focus-tech]"
+        );
+
+
+    const result =
+        document.getElementById(
+            "focus-result"
+        );
+
+
+    if (
+        !buttons.length ||
+        !result
+    ) {
+
+        return;
+
+    }
+
+
+    buttons.forEach(
+        (button) => {
+
+            function selecionar() {
+
+                buttons.forEach(
+                    (item) => {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    }
+                );
+
+
+                button.classList.add(
+                    "active"
+                );
+
+
+                result.textContent =
+                    button
+                        .dataset
+                        .focusTech;
 
             }
 
 
-            const rect =
-                scene.getBoundingClientRect();
+            button.addEventListener(
+                "mouseenter",
+                selecionar
+            );
 
 
-            const x =
-                (
-                    evento.clientX -
-                    rect.left
-                )
-                /
-                rect.width;
+            button.addEventListener(
+                "focus",
+                selecionar
+            );
 
 
-            const y =
-                (
-                    evento.clientY -
-                    rect.top
-                )
-                /
-                rect.height;
-
-
-            alvoY =
-                35 +
-                (
-                    x - 0.5
-                ) * 38;
-
-
-            alvoX =
-                -20 +
-                (
-                    y - 0.5
-                ) * -28;
-
-
-            mouseAtivo =
-                true;
-
-        }
-    );
-
-
-
-    scene.addEventListener(
-        "mouseleave",
-        () => {
-
-            alvoX =
-                -20;
-
-
-            alvoY =
-                35;
-
-
-            mouseAtivo =
-                false;
-
-        }
-    );
-
-
-
-    // ========================================================
-    // CLIQUE
-    // ========================================================
-
-    scene.addEventListener(
-        "click",
-        () => {
-
-            cube.animate(
-
-                [
-
-                    {
-                        transform:
-                            `rotateX(${atualX}deg) rotateY(${atualY}deg) scale(1)`
-                    },
-
-                    {
-                        transform:
-                            `rotateX(${atualX + 15}deg) rotateY(${atualY + 40}deg) scale(1.06)`
-                    },
-
-                    {
-                        transform:
-                            `rotateX(${atualX}deg) rotateY(${atualY}deg) scale(1)`
-                    }
-
-                ],
-
-                {
-                    duration:
-                        700,
-
-                    easing:
-                        "cubic-bezier(.2,.8,.2,1)"
-                }
-
+            button.addEventListener(
+                "click",
+                selecionar
             );
 
         }
-    );
-
-
-
-    // ========================================================
-    // LOOP
-    // ========================================================
-
-    function animar() {
-
-        if (
-            reduzirMovimento
-        ) {
-
-            cube.style.transform =
-                "rotateX(-20deg) rotateY(35deg)";
-
-
-            return;
-
-        }
-
-
-        tempo +=
-            0.006;
-
-
-        if (
-            !mouseAtivo
-        ) {
-
-            alvoY =
-                35 +
-                Math.sin(
-                    tempo
-                ) * 9;
-
-
-            alvoX =
-                -20 +
-                Math.cos(
-                    tempo * 0.8
-                ) * 5;
-
-        }
-
-
-        atualX +=
-            (
-                alvoX -
-                atualX
-            ) * 0.055;
-
-
-        atualY +=
-            (
-                alvoY -
-                atualY
-            ) * 0.055;
-
-
-        cube.style.transform =
-            `
-                rotateX(${atualX}deg)
-                rotateY(${atualY}deg)
-            `;
-
-
-        requestAnimationFrame(
-            animar
-        );
-
-    }
-
-
-    requestAnimationFrame(
-        animar
     );
 
 }
@@ -702,25 +744,20 @@ function iniciarDataCore() {
 
 
 // ============================================================
-// STACK DO FOCO ATUAL
+// FOCUS VISUAL
 // ============================================================
 
-function iniciarStackAtual() {
+function iniciarFocusVisual() {
 
-    const tecnologias =
-        document.querySelectorAll(
-            ".foco-atual__stack [data-tech]"
-        );
-
-
-    const resultado =
+    const visual =
         document.getElementById(
-            "core-result"
+            "focus-visual"
         );
 
 
     if (
-        !tecnologias.length
+        !visual ||
+        reduzirMovimento
     ) {
 
         return;
@@ -728,99 +765,51 @@ function iniciarStackAtual() {
     }
 
 
-    tecnologias.forEach(
-        (item) => {
+    visual.addEventListener(
+        "pointermove",
+        (event) => {
+
+            const rect =
+                visual.getBoundingClientRect();
 
 
-            item.addEventListener(
-                "mouseenter",
-                () => {
-
-                    tecnologias.forEach(
-                        (tecnologia) => {
-
-                            tecnologia.classList.remove(
-                                "ativo"
-                            );
-
-                        }
-                    );
+            const x =
+                (
+                    event.clientX -
+                    rect.left
+                )
+                /
+                rect.width -
+                0.5;
 
 
-                    item.classList.add(
-                        "ativo"
-                    );
+            const y =
+                (
+                    event.clientY -
+                    rect.top
+                )
+                /
+                rect.height -
+                0.5;
 
 
-                    if (
-                        resultado
-                    ) {
+            visual.style.transform =
+                `
+                    perspective(1000px)
+                    rotateX(${y * -6}deg)
+                    rotateY(${x * 7}deg)
+                `;
 
-                        resultado.textContent =
-                            item.dataset.tech;
-
-                    }
-
-                }
-            );
+        }
+    );
 
 
+    visual.addEventListener(
+        "pointerleave",
+        () => {
 
-            item.addEventListener(
-                "mouseleave",
-                () => {
-
-                    item.classList.remove(
-                        "ativo"
-                    );
-
-
-                    if (
-                        resultado
-                    ) {
-
-                        resultado.textContent =
-                            "DATA ENGINEERING";
-
-                    }
-
-                }
-            );
-
-
-
-            item.addEventListener(
-                "click",
-                () => {
-
-                    tecnologias.forEach(
-                        (tecnologia) => {
-
-                            tecnologia.classList.remove(
-                                "ativo"
-                            );
-
-                        }
-                    );
-
-
-                    item.classList.add(
-                        "ativo"
-                    );
-
-
-                    if (
-                        resultado
-                    ) {
-
-                        resultado.textContent =
-                            item.dataset.tech;
-
-                    }
-
-                }
-            );
-
+            visual.style.transform =
+                "";
 
         }
     );
@@ -830,88 +819,589 @@ function iniciarStackAtual() {
 
 
 // ============================================================
-// INTERAÇÃO NOS BOTÕES
+// MAGNETIC
 // ============================================================
 
-function iniciarBotoesAbout() {
+function iniciarMagneticos() {
 
-    const botoes =
-        document.querySelectorAll(
-            "a, button"
+    if (
+        reduzirMovimento ||
+        window.matchMedia(
+            "(hover: none)"
+        ).matches
+    ) {
+
+        return;
+
+    }
+
+
+    document
+        .querySelectorAll(
+            ".magnetic"
+        )
+        .forEach(
+            (button) => {
+
+                button.addEventListener(
+                    "pointermove",
+                    (event) => {
+
+                        const rect =
+                            button.getBoundingClientRect();
+
+
+                        const x =
+                            event.clientX -
+                            rect.left -
+                            rect.width / 2;
+
+
+                        const y =
+                            event.clientY -
+                            rect.top -
+                            rect.height / 2;
+
+
+                        button.style.transform =
+                            `
+                                translate(
+                                    ${x * 0.08}px,
+                                    ${y * 0.12}px
+                                )
+                            `;
+
+                    }
+                );
+
+
+                button.addEventListener(
+                    "pointerleave",
+                    () => {
+
+                        button.style.transform =
+                            "";
+
+                    }
+                );
+
+            }
+        );
+
+}
+
+
+
+// ============================================================
+// GSAP
+// ============================================================
+
+function iniciarMotion() {
+
+    if (
+        reduzirMovimento ||
+        typeof gsap ===
+            "undefined" ||
+        typeof ScrollTrigger ===
+            "undefined"
+    ) {
+
+        return;
+
+    }
+
+
+    gsap.registerPlugin(
+        ScrollTrigger
+    );
+
+
+    const intro =
+        gsap.timeline();
+
+
+    intro
+        .from(
+            ".brand",
+            {
+                opacity:
+                    0,
+
+                y:
+                    -16
+            }
+        )
+
+        .from(
+            ".navigation a",
+            {
+                opacity:
+                    0,
+
+                y:
+                    -12,
+
+                stagger:
+                    0.08
+            },
+            "-=0.35"
+        )
+
+        .from(
+            ".about-title-line",
+            {
+                yPercent:
+                    110,
+
+                opacity:
+                    0,
+
+                stagger:
+                    0.12,
+
+                duration:
+                    0.9,
+
+                ease:
+                    "power4.out"
+            },
+            "-=0.15"
+        )
+
+        .from(
+            ".about-enter",
+            {
+                y:
+                    35,
+
+                opacity:
+                    0,
+
+                stagger:
+                    0.1
+            },
+            "-=0.4"
+        )
+
+        .from(
+            ".about-photo",
+            {
+                x:
+                    90,
+
+                opacity:
+                    0,
+
+                scale:
+                    0.92,
+
+                duration:
+                    1.1
+            },
+            "-=0.8"
         );
 
 
-    botoes.forEach(
-        (botao) => {
+    // HERO SCROLL
 
+    gsap.to(
+        ".about-hero__copy",
+        {
+            y:
+                -120,
 
-            botao.addEventListener(
-                "pointerdown",
-                () => {
+            opacity:
+                0.18,
 
-                    botao.animate(
+            scrollTrigger: {
+                trigger:
+                    ".about-hero",
 
-                        [
+                start:
+                    "top top",
 
-                            {
-                                transform:
-                                    "scale(1)"
-                            },
+                end:
+                    "bottom top",
 
-                            {
-                                transform:
-                                    "scale(0.97)"
-                            },
-
-                            {
-                                transform:
-                                    "scale(1)"
-                            }
-
-                        ],
-
-                        {
-
-                            duration:
-                                220,
-
-                            easing:
-                                "ease-out"
-
-                        }
-
-                    );
-
-                }
-            );
-
-
+                scrub:
+                    1
+            }
         }
     );
+
+
+    gsap.to(
+        ".about-photo-world",
+        {
+            y:
+                130,
+
+            scale:
+                0.9,
+
+            scrollTrigger: {
+                trigger:
+                    ".about-hero",
+
+                start:
+                    "top top",
+
+                end:
+                    "bottom top",
+
+                scrub:
+                    1
+            }
+        }
+    );
+
+
+    // STATEMENT
+
+    gsap.from(
+        ".about-statement > div span",
+        {
+            xPercent:
+                -25,
+
+            opacity:
+                0,
+
+            stagger:
+                0.12,
+
+            scrollTrigger: {
+                trigger:
+                    ".about-statement",
+
+                start:
+                    "top 75%"
+            }
+        }
+    );
+
+
+    gsap.from(
+        ".about-statement__text",
+        {
+            y:
+                60,
+
+            opacity:
+                0,
+
+            scrollTrigger: {
+                trigger:
+                    ".about-statement__text",
+
+                start:
+                    "top 85%"
+            }
+        }
+    );
+
+
+    // TIMELINE HEADER
+
+    gsap.from(
+        ".about-timeline__header > *",
+        {
+            y:
+                55,
+
+            opacity:
+                0,
+
+            stagger:
+                0.12,
+
+            scrollTrigger: {
+                trigger:
+                    ".about-timeline__header",
+
+                start:
+                    "top 78%"
+            }
+        }
+    );
+
+
+    // TIMELINE PROGRESS
+
+    gsap.to(
+        "#journey-progress",
+        {
+            height:
+                "100%",
+
+            ease:
+                "none",
+
+            scrollTrigger: {
+                trigger:
+                    ".journey",
+
+                start:
+                    "top 65%",
+
+                end:
+                    "bottom 55%",
+
+                scrub:
+                    1
+            }
+        }
+    );
+
+
+    // STEPS
+
+    document
+        .querySelectorAll(
+            ".journey-step"
+        )
+        .forEach(
+            (
+                step,
+                index
+            ) => {
+
+                const copy =
+                    step.querySelector(
+                        ".journey-step__copy"
+                    );
+
+
+                const visual =
+                    step.querySelector(
+                        ".journey-step__visual"
+                    );
+
+
+                gsap.from(
+                    copy,
+                    {
+                        x:
+                            index % 2 === 0
+                                ? -70
+                                : 70,
+
+                        opacity:
+                            0,
+
+                        scrollTrigger: {
+                            trigger:
+                                step,
+
+                            start:
+                                "top 72%"
+                        }
+                    }
+                );
+
+
+                gsap.from(
+                    visual,
+                    {
+                        scale:
+                            0.78,
+
+                        opacity:
+                            0,
+
+                        rotation:
+                            5,
+
+                        scrollTrigger: {
+                            trigger:
+                                step,
+
+                            start:
+                                "top 68%"
+                        }
+                    }
+                );
+
+            }
+        );
+
+
+    // PRINCIPLES
+
+    gsap.from(
+        ".principles header > *",
+        {
+            y:
+                55,
+
+            opacity:
+                0,
+
+            stagger:
+                0.12,
+
+            scrollTrigger: {
+                trigger:
+                    ".principles",
+
+                start:
+                    "top 78%"
+            }
+        }
+    );
+
+
+    gsap.from(
+        ".principle",
+        {
+            y:
+                80,
+
+            opacity:
+                0,
+
+            stagger:
+                0.13,
+
+            scrollTrigger: {
+                trigger:
+                    ".principles__grid",
+
+                start:
+                    "top 82%"
+            }
+        }
+    );
+
+
+    // FOCUS
+
+    gsap.from(
+        ".current-focus__copy > *",
+        {
+            x:
+                -70,
+
+            opacity:
+                0,
+
+            stagger:
+                0.08,
+
+            scrollTrigger: {
+                trigger:
+                    ".current-focus",
+
+                start:
+                    "top 78%"
+            }
+        }
+    );
+
+
+    gsap.from(
+        ".focus-visual",
+        {
+            x:
+                80,
+
+            opacity:
+                0,
+
+            scale:
+                0.8,
+
+            scrollTrigger: {
+                trigger:
+                    ".current-focus",
+
+                start:
+                    "top 78%"
+            }
+        }
+    );
+
+
+    // FINAL
+
+    gsap.from(
+        ".about-final > *",
+        {
+            y:
+                55,
+
+            opacity:
+                0,
+
+            stagger:
+                0.12,
+
+            scrollTrigger: {
+                trigger:
+                    ".about-final",
+
+                start:
+                    "top 78%"
+            }
+        }
+    );
+
+
+    ScrollTrigger.refresh();
 
 }
 
 
 
 // ============================================================
-// INICIALIZAÇÃO
+// ANO
+// ============================================================
+
+function iniciarAno() {
+
+    const year =
+        document.getElementById(
+            "current-year"
+        );
+
+
+    if (
+        year
+    ) {
+
+        year.textContent =
+            new Date()
+                .getFullYear();
+
+    }
+
+}
+
+
+
+// ============================================================
+// INIT
 // ============================================================
 
 document.addEventListener(
     "DOMContentLoaded",
     () => {
 
-        iniciarRevealAbout();
+        iniciarWebGL();
 
-        iniciarDataBlock();
+        iniciarCursor();
 
-        iniciarCards3D();
+        iniciarFoto();
 
-        iniciarDataCore();
+        iniciarFocusTech();
 
-        iniciarStackAtual();
+        iniciarFocusVisual();
 
-        iniciarBotoesAbout();
+        iniciarMagneticos();
+
+        iniciarMotion();
+
+        iniciarAno();
 
     }
 );

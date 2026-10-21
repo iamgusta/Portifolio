@@ -11,7 +11,7 @@
 
     <meta
         name="description"
-        content="Portfólio de Gustavo Lopes com projetos em Engenharia de Dados, Python, SQL, ETL, bancos de dados e desenvolvimento."
+        content="Portfólio de Gustavo Lopes focado em Engenharia de Dados, Python, SQL, ETL, pipelines e bancos de dados."
     >
 
     <title>Gustavo Lopes | Data Engineering</title>
@@ -22,49 +22,77 @@
     >
 </head>
 
+
 <body>
 
     <!-- =========================================================
-         CABEÇALHO
+         FUNDO 3D
     ========================================================== -->
-    <header class="cabecalho">
+
+    <div
+        id="webgl-bg"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================================
+         CURSOR
+    ========================================================== -->
+
+    <div
+        class="cursor-ring"
+        id="cursor-ring"
+        aria-hidden="true"
+    ></div>
+
+    <div
+        class="cursor-dot"
+        id="cursor-dot"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header class="topbar">
 
         <a
-            class="marca"
             href="#inicio"
+            class="brand"
         >
-            <span>GL</span>
-            <small>/ DATA</small>
+            <span class="brand__symbol">
+                GL
+            </span>
+
+            <span class="brand__text">
+                DATA ENGINEERING
+            </span>
         </a>
 
-        <nav class="cabecalho__nav">
-            <a
-                class="cabecalho__link"
-                href="#projetos"
-            >
+
+        <nav class="navigation">
+
+            <a href="#projetos">
                 Projetos
             </a>
 
-            <a
-                class="cabecalho__link"
-                href="#stack"
-            >
+            <a href="#universo">
                 Stack
             </a>
 
-            <a
-                class="cabecalho__link"
-                href="#sobre"
-            >
+            <a href="#sobre">
                 Sobre
             </a>
 
             <a
-                class="cabecalho__link cabecalho__link--destaque"
                 href="#contato"
+                class="navigation__contact"
             >
                 Contato
             </a>
+
         </nav>
 
     </header>
@@ -73,55 +101,96 @@
 
     <main>
 
+
         <!-- =====================================================
-             HOME
+             HERO
         ====================================================== -->
+
         <section
             class="hero"
             id="inicio"
+            data-particle="#4f8cff"
         >
 
-            <div class="hero__conteudo">
+            <div
+                class="hero__ghost-word"
+                aria-hidden="true"
+            >
+                DATA
+            </div>
 
-                <p class="eyebrow">
+
+            <div class="hero__left">
+
+                <p class="eyebrow hero-enter">
                     DATA ENGINEERING / PORTFÓLIO
                 </p>
 
-                <h1>
-                    Construindo sistemas que transformam
-                    <span>dados em informação.</span>
+
+                <h1 class="hero__title">
+
+                    <span class="hero-title-line">
+                        BUILDING
+                    </span>
+
+                    <span class="hero-title-line hero-title-line--blue">
+                        DATA SYSTEMS
+                    </span>
+
+                    <span class="hero-title-line">
+                        THAT MOVE
+                    </span>
+
+                    <span class="hero-title-line">
+                        INFORMATION.
+                    </span>
+
                 </h1>
 
-                <p class="hero__texto">
-                    Sou Gustavo Lopes. Desenvolvo projetos com Python,
-                    SQL, ETL, bancos de dados e automação, transformando
-                    dados brutos em estruturas organizadas e úteis.
+
+                <p class="hero__description hero-enter">
+
+                    Sou Gustavo Lopes.
+
+                    Desenvolvo projetos envolvendo
+                    Python, SQL, ETL, pipelines,
+                    bancos de dados e automação.
+
                 </p>
 
-                <div class="hero__acoes">
-                    <a
-                        class="botao botao--primario"
-                        href="#projetos"
-                    >
-                        Ver projetos
-                    </a>
+
+                <div class="hero__buttons hero-enter">
 
                     <a
-                        class="botao botao--secundario"
+                        href="#projetos"
+                        class="button button--blue magnetic"
+                    >
+                        Explorar projetos
+                        <span>↓</span>
+                    </a>
+
+
+                    <a
                         href="https://github.com/iamgusta"
                         target="_blank"
                         rel="noopener noreferrer"
+                        class="button button--line magnetic"
                     >
-                        GitHub ↗
+                        GitHub
+                        <span>↗</span>
                     </a>
+
                 </div>
 
-                <div class="hero__mini-info">
-                    <span>Python</span>
+
+                <div class="hero__tech hero-enter">
+
+                    <span>PYTHON</span>
                     <span>SQL</span>
                     <span>ETL</span>
-                    <span>Docker</span>
-                    <span>Data Engineering</span>
+                    <span>POSTGRESQL</span>
+                    <span>AIRFLOW</span>
+
                 </div>
 
             </div>
@@ -129,95 +198,174 @@
 
 
             <!-- =================================================
-                 DATA DICE
+                 FOTO
             ================================================== -->
+
             <div
-                class="dice-area"
-                id="dice-area"
+                class="hero-portrait"
+                id="hero-portrait"
             >
 
-                <div class="dice-area__glow"></div>
-                <div class="dice-area__smoke dice-area__smoke--um"></div>
-                <div class="dice-area__smoke dice-area__smoke--dois"></div>
+                <div
+                    class="hero-portrait__halo"
+                    data-depth="0.3"
+                    aria-hidden="true"
+                ></div>
 
-                <div class="dice-area__topo">
-                    <span>DATA DICE</span>
-
-                    <span class="dice-online">
-                        <i></i>
-                        interactive
-                    </span>
-                </div>
 
                 <div
-                    class="dice-scene"
-                    id="dice-scene"
+                    class="hero-portrait__orbit hero-portrait__orbit--one"
+                    data-depth="0.6"
+                    aria-hidden="true"
+                ></div>
+
+
+                <div
+                    class="hero-portrait__orbit hero-portrait__orbit--two"
+                    data-depth="0.9"
+                    aria-hidden="true"
+                ></div>
+
+
+                <div
+                    class="hero-portrait__photo"
+                    data-depth="1"
                 >
+
+                    <img
+                        src="./assets/Minha foto.jpeg"
+                        alt="Gustavo Lopes"
+                    >
+
+
                     <div
-                        class="dice"
-                        id="dice"
-                    >
+                        class="hero-portrait__blue"
+                        aria-hidden="true"
+                    ></div>
 
-                        <div class="dice-face dice-face--front">
-                            <span class="pip pip--5"></span>
-                        </div>
 
-                        <div class="dice-face dice-face--back">
-                            <span class="pip pip--1"></span>
-                            <span class="pip pip--3"></span>
-                            <span class="pip pip--4"></span>
-                            <span class="pip pip--6"></span>
-                            <span class="pip pip--7"></span>
-                            <span class="pip pip--9"></span>
-                        </div>
+                    <div
+                        class="hero-portrait__scanner"
+                        aria-hidden="true"
+                    ></div>
 
-                        <div class="dice-face dice-face--right">
-                            <span class="pip pip--1"></span>
-                            <span class="pip pip--5"></span>
-                            <span class="pip pip--9"></span>
-                        </div>
-
-                        <div class="dice-face dice-face--left">
-                            <span class="pip pip--1"></span>
-                            <span class="pip pip--3"></span>
-                            <span class="pip pip--7"></span>
-                            <span class="pip pip--9"></span>
-                        </div>
-
-                        <div class="dice-face dice-face--top">
-                            <span class="pip pip--1"></span>
-                            <span class="pip pip--9"></span>
-                        </div>
-
-                        <div class="dice-face dice-face--bottom">
-                            <span class="pip pip--1"></span>
-                            <span class="pip pip--3"></span>
-                            <span class="pip pip--5"></span>
-                            <span class="pip pip--7"></span>
-                            <span class="pip pip--9"></span>
-                        </div>
-
-                    </div>
                 </div>
 
-                <div class="dice-area__resultado">
+
+                <div
+                    class="hero-floating hero-floating--python"
+                    data-depth="1.5"
+                >
+                    PYTHON
+                </div>
+
+
+                <div
+                    class="hero-floating hero-floating--sql"
+                    data-depth="1.9"
+                >
+                    SQL
+                </div>
+
+
+                <div
+                    class="hero-floating hero-floating--pipeline"
+                    data-depth="1.3"
+                >
+                    PIPELINES
+                </div>
+
+
+                <div class="hero-portrait__identity">
+
                     <div>
-                        <small>SUA SORTE</small>
-                        <strong id="dice-result">?</strong>
+
+                        <small>
+                            GUSTAVO LOPES
+                        </small>
+
+                        <strong>
+                            Future Data Engineer
+                        </strong>
+
                     </div>
 
-                    <button
-                        type="button"
-                        id="dice-roll"
-                        class="dice-roll"
-                    >
-                        Rolar dado ↻
-                    </button>
+
+                    <span>
+                        <i></i>
+                        disponível
+                    </span>
+
                 </div>
 
-                <p class="dice-area__hint">
-                    clique no dado e deixe a sorte escolher sua área
+            </div>
+
+
+            <a
+                href="#manifesto"
+                class="scroll-indicator"
+            >
+                <span>
+                    SCROLL TO EXPLORE
+                </span>
+
+                <i></i>
+            </a>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             TRANSIÇÃO
+        ====================================================== -->
+
+        <section
+            class="manifesto"
+            id="manifesto"
+            data-particle="#22d3ee"
+        >
+
+            <div class="manifesto__line">
+
+                <span>
+                    RAW DATA
+                </span>
+
+                <i>→</i>
+
+                <span>
+                    PIPELINES
+                </span>
+
+                <i>→</i>
+
+                <span>
+                    PROCESSING
+                </span>
+
+                <i>→</i>
+
+                <span>
+                    INFORMATION
+                </span>
+
+            </div>
+
+
+            <div class="manifesto__statement">
+
+                <p>
+                    NÃO É APENAS SOBRE
                 </p>
+
+                <h2>
+                    mover dados.
+                </h2>
+
+                <h2 class="manifesto__outline">
+                    É sobre criar fluxo.
+                </h2>
 
             </div>
 
@@ -228,402 +376,896 @@
         <!-- =====================================================
              PROJETOS
         ====================================================== -->
+
         <section
-            class="secao reveal"
+            class="projects"
             id="projetos"
+            data-particle="#246bfd"
         >
 
-            <div class="secao__cabecalho">
-                <div>
-                    <p class="eyebrow">
-                        01 / PROJETOS
-                    </p>
+            <header class="projects__header">
 
-                    <h2>
-                        Projetos que fazem parte da minha evolução.
-                    </h2>
-                </div>
+                <p class="eyebrow">
+                    01 / SELECTED WORK
+                </p>
+
+                <h2>
+                    Projetos como
+                    <span>capítulos.</span>
+                </h2>
 
                 <p>
-                    Engenharia de Dados é o meu foco principal,
-                    mas também desenvolvo projetos para fortalecer
-                    minha base em banco de dados, Python e desenvolvimento.
+                    Role a página.
+                    Cada projeto entra em cena
+                    como parte da jornada.
                 </p>
+
+            </header>
+
+
+
+            <!-- =================================================
+                 PROJETO 01
+            ================================================== -->
+
+            <article class="project-chapter">
+
+                <div class="project-chapter__sticky">
+
+                    <div class="project-index">
+                        01
+                    </div>
+
+
+                    <div class="project-copy">
+
+                        <p class="project-label">
+                            DATA ENGINEERING / REAL TIME
+                        </p>
+
+                        <h3>
+                            Real-Time
+                            <span>Data Platform</span>
+                        </h3>
+
+
+                        <p>
+                            Plataforma de dados em tempo real
+                            para geração, processamento e
+                            visualização contínua de eventos
+                            de telemetria.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>PYTHON</span>
+                            <span>KAFKA</span>
+                            <span>CLICKHOUSE</span>
+                            <span>FASTAPI</span>
+                            <span>DOCKER</span>
+
+                        </div>
+
+
+                        <a
+                            href="https://github.com/iamgusta/real-time-data-platform"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            Abrir projeto
+                            <span>↗</span>
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="project-art project-art--realtime">
+
+                        <div class="pipeline-node pipeline-node--one">
+                            EVENT
+                        </div>
+
+                        <div class="pipeline-line pipeline-line--one"></div>
+
+                        <div class="pipeline-node pipeline-node--two">
+                            KAFKA
+                        </div>
+
+                        <div class="pipeline-line pipeline-line--two"></div>
+
+                        <div class="pipeline-node pipeline-node--three">
+                            CONSUMER
+                        </div>
+
+                        <div class="pipeline-line pipeline-line--three"></div>
+
+                        <div class="pipeline-node pipeline-node--four">
+                            CLICKHOUSE
+                        </div>
+
+                        <div class="pipeline-line pipeline-line--four"></div>
+
+                        <div class="pipeline-node pipeline-node--five">
+                            API
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PROJETO 02
+            ================================================== -->
+
+            <article class="project-chapter">
+
+                <div class="project-chapter__sticky">
+
+                    <div class="project-index">
+                        02
+                    </div>
+
+
+                    <div class="project-copy">
+
+                        <p class="project-label">
+                            DATA ENGINEERING / E-COMMERCE
+                        </p>
+
+                        <h3>
+                            Plataforma de Dados
+                            <span>para E-commerce</span>
+                        </h3>
+
+
+                        <p>
+                            Pipeline ETL automatizado,
+                            orquestração, PostgreSQL,
+                            Data Warehouse e Power BI.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>PYTHON</span>
+                            <span>AIRFLOW</span>
+                            <span>DOCKER</span>
+                            <span>POSTGRESQL</span>
+                            <span>POWER BI</span>
+
+                        </div>
+
+
+                        <a
+                            href="https://github.com/iamgusta/Plataforma-dados-e-commerce"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            Abrir projeto
+                            <span>↗</span>
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="project-art project-art--warehouse">
+
+                        <div class="warehouse-layer">
+                            RAW DATA
+                        </div>
+
+                        <div class="warehouse-layer">
+                            AIRFLOW
+                        </div>
+
+                        <div class="warehouse-layer">
+                            ETL
+                        </div>
+
+                        <div class="warehouse-layer">
+                            POSTGRESQL
+                        </div>
+
+                        <div class="warehouse-layer">
+                            DW
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PROJETO 03
+            ================================================== -->
+
+            <article class="project-chapter">
+
+                <div class="project-chapter__sticky">
+
+                    <div class="project-index">
+                        03
+                    </div>
+
+
+                    <div class="project-copy">
+
+                        <p class="project-label">
+                            DATA ENGINEERING / SALES
+                        </p>
+
+                        <h3>
+                            Pipeline
+                            <span>de Vendas</span>
+                        </h3>
+
+
+                        <p>
+                            Ingestão, transformação,
+                            armazenamento e análise
+                            de informações de vendas.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>PYTHON</span>
+                            <span>PANDAS</span>
+                            <span>MYSQL</span>
+                            <span>AIRFLOW</span>
+                            <span>POWER BI</span>
+
+                        </div>
+
+
+                        <a
+                            href="https://github.com/iamgusta/Pipeline-de-vendas"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            Abrir projeto
+                            <span>↗</span>
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="project-art project-art--sales">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PROJETO 04
+            ================================================== -->
+
+            <article class="project-chapter">
+
+                <div class="project-chapter__sticky">
+
+                    <div class="project-index">
+                        04
+                    </div>
+
+
+                    <div class="project-copy">
+
+                        <p class="project-label">
+                            DATABASE
+                        </p>
+
+                        <h3>
+                            Coffee Shop
+                            <span>Database</span>
+                        </h3>
+
+
+                        <p>
+                            Banco de dados para gerenciamento
+                            de vendas, pedidos, produtos,
+                            clientes e operações.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>PYTHON</span>
+                            <span>SQLITE</span>
+                            <span>SQL</span>
+
+                        </div>
+
+
+                        <a
+                            href="https://github.com/iamgusta/cafeteriadatabase"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            Abrir projeto
+                            <span>↗</span>
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="project-art project-art--database">
+
+                        <div class="database-ring database-ring--one"></div>
+
+                        <div class="database-ring database-ring--two"></div>
+
+                        <div class="database-ring database-ring--three"></div>
+
+
+                        <div class="database-core">
+                            SQL
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PROJETO 05
+            ================================================== -->
+
+            <article class="project-chapter">
+
+                <div class="project-chapter__sticky">
+
+                    <div class="project-index">
+                        05
+                    </div>
+
+
+                    <div class="project-copy">
+
+                        <p class="project-label">
+                            PYTHON / GAME LOGIC
+                        </p>
+
+                        <h3>
+                            Crash
+                            <span>GAME</span>
+                        </h3>
+
+
+                        <p>
+                            Projeto criado para desenvolver
+                            lógica, eventos, colisões,
+                            pontuação e organização de código.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>PYTHON</span>
+                            <span>PYGAME</span>
+                            <span>LOGIC</span>
+
+                        </div>
+
+
+                        <a
+                            href="https://github.com/iamgusta/CrashGAME"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            Abrir projeto
+                            <span>↗</span>
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="project-art project-art--game">
+
+                        <div class="game-shape game-shape--one"></div>
+
+                        <div class="game-shape game-shape--two"></div>
+
+                        <div class="game-shape game-shape--three"></div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PROJETO 06 / PORTFÓLIO
+            ================================================== -->
+
+            <article class="project-chapter">
+
+                <div class="project-chapter__sticky">
+
+                    <div class="project-index">
+                        06
+                    </div>
+
+
+                    <div class="project-copy">
+
+                        <p class="project-label">
+                            WEB / INTERACTION
+                        </p>
+
+                        <h3>
+                            Portfólio
+                            <span>Pessoal</span>
+                        </h3>
+
+
+                        <p>
+                            Uma experiência web criada
+                            para apresentar projetos,
+                            tecnologias e minha evolução.
+                        </p>
+
+
+                        <div class="project-tags">
+
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JAVASCRIPT</span>
+                            <span>GSAP</span>
+                            <span>THREE.JS</span>
+
+                        </div>
+
+
+                        <a
+                            href="https://github.com/iamgusta/Portifolio"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="project-link"
+                        >
+                            Abrir projeto
+                            <span>↗</span>
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- VISUAL NOVO PORTFÓLIO -->
+
+                    <div class="project-art project-art--browser">
+
+                        <div
+                            class="portfolio-art__glow"
+                            aria-hidden="true"
+                        ></div>
+
+
+                        <div class="portfolio-window">
+
+                            <!-- BARRA DO NAVEGADOR -->
+
+                            <div class="portfolio-window__top">
+
+                                <div class="portfolio-window__dots">
+
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+
+                                </div>
+
+
+                                <span>
+                                    iamgusta / portfolio
+                                </span>
+
+
+                                <b>
+                                    LIVE
+                                </b>
+
+                            </div>
+
+
+
+                            <!-- CORPO -->
+
+                            <div class="portfolio-window__body">
+
+
+                                <!-- MENU MINI -->
+
+                                <aside class="portfolio-mini-nav">
+
+                                    <div class="portfolio-mini-logo">
+                                        GL
+                                    </div>
+
+
+                                    <span class="is-active">
+                                        01
+                                    </span>
+
+                                    <span>
+                                        02
+                                    </span>
+
+                                    <span>
+                                        03
+                                    </span>
+
+                                    <span>
+                                        04
+                                    </span>
+
+                                </aside>
+
+
+
+                                <!-- CONTEÚDO -->
+
+                                <div class="portfolio-mini-content">
+
+
+                                    <div class="portfolio-mini-status">
+
+                                        <span>
+                                            DATA ENGINEERING
+                                        </span>
+
+                                        <i></i>
+
+                                    </div>
+
+
+
+                                    <div class="portfolio-mini-hero">
+
+                                        <small>
+                                            PORTFOLIO / 2026
+                                        </small>
+
+
+                                        <strong>
+                                            GUSTAVO
+                                            <span>LOPES</span>
+                                        </strong>
+
+
+                                        <p>
+                                            PYTHON / SQL / ETL
+                                        </p>
+
+                                    </div>
+
+
+
+                                    <div class="portfolio-mini-projects">
+
+                                        <article>
+
+                                            <span>
+                                                01
+                                            </span>
+
+                                            <strong>
+                                                REAL-TIME
+                                            </strong>
+
+                                            <small>
+                                                KAFKA
+                                            </small>
+
+                                        </article>
+
+
+                                        <article>
+
+                                            <span>
+                                                02
+                                            </span>
+
+                                            <strong>
+                                                E-COMMERCE
+                                            </strong>
+
+                                            <small>
+                                                ETL
+                                            </small>
+
+                                        </article>
+
+
+                                        <article>
+
+                                            <span>
+                                                03
+                                            </span>
+
+                                            <strong>
+                                                PIPELINE
+                                            </strong>
+
+                                            <small>
+                                                SQL
+                                            </small>
+
+                                        </article>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- SCANNER -->
+
+                            <div
+                                class="portfolio-window__scanner"
+                                aria-hidden="true"
+                            ></div>
+
+                        </div>
+
+
+
+                        <!-- ELEMENTOS FLUTUANTES -->
+
+                        <div class="portfolio-float portfolio-float--one">
+                            THREE.JS
+                        </div>
+
+
+                        <div class="portfolio-float portfolio-float--two">
+                            GSAP
+                        </div>
+
+
+                        <div class="portfolio-float portfolio-float--three">
+                            INTERACTIVE
+                        </div>
+
+
+                        <div
+                            class="portfolio-orbit"
+                            aria-hidden="true"
+                        >
+                            <span></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             UNIVERSO DE TECNOLOGIAS
+        ====================================================== -->
+
+        <section
+            class="data-universe"
+            id="universo"
+            data-particle="#4de8ff"
+        >
+
+            <div class="data-universe__copy">
+
+                <p class="eyebrow">
+                    02 / DATA UNIVERSE
+                </p>
+
+
+                <h2>
+                    Ferramentas não ficam
+                    <span>isoladas.</span>
+                </h2>
+
+
+                <p>
+                    Elas se conectam para criar
+                    pipelines, automações,
+                    armazenamento e processamento.
+                </p>
+
+
+                <div class="tech-output">
+
+                    <small>
+                        TECNOLOGIA SELECIONADA
+                    </small>
+
+                    <strong id="tech-output-name">
+                        DATA ENGINEERING
+                    </strong>
+
+                    <p id="tech-output-description">
+                        Explore os elementos ao lado.
+                    </p>
+
+                </div>
+
             </div>
 
 
 
-            <div class="projetos-grid">
-
-                <!-- 01 -->
-                <article class="projeto projeto--dados">
-
-                    <div class="projeto__topo">
-                        <span class="projeto__numero">01</span>
-                        <span class="projeto__categoria">DATA ENGINEERING</span>
-                    </div>
-
-                    <div class="arquitetura">
-                        <span class="arquitetura__titulo">
-                            REAL-TIME FLOW
-                        </span>
-
-                        <div class="arquitetura__fluxo">
-                            <div class="arquitetura__node">EVENT</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node arquitetura__node--ativo">KAFKA</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node">CONSUMER</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node">CLICKHOUSE</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node">DASHBOARD</div>
-                        </div>
-                    </div>
-
-                    <div class="projeto__conteudo">
-                        <h3>Real-Time Data Platform</h3>
-
-                        <p>
-                            Plataforma de dados em tempo real para
-                            monitoramento de veículos, trabalhando
-                            com geração, processamento e visualização
-                            contínua de eventos.
-                        </p>
-
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>Kafka</span>
-                            <span>ClickHouse</span>
-                            <span>FastAPI</span>
-                            <span>Docker</span>
-                        </div>
-
-                        <div class="projeto__acoes">
-                            <button
-                                class="projeto__detalhes"
-                                type="button"
-                                data-project="realtime"
-                            >
-                                Ver detalhes
-                            </button>
-
-                            <a
-                                class="projeto__link"
-                                href="https://github.com/iamgusta/real-time-data-platform"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                GitHub ↗
-                            </a>
-                        </div>
-                    </div>
-
-                </article>
-
-
-
-                <!-- 02 -->
-                <article class="projeto projeto--dados">
-
-                    <div class="projeto__topo">
-                        <span class="projeto__numero">02</span>
-                        <span class="projeto__categoria">DATA ENGINEERING</span>
-                    </div>
-
-                    <div class="arquitetura">
-                        <span class="arquitetura__titulo">
-                            E-COMMERCE DATA FLOW
-                        </span>
-
-                        <div class="arquitetura__fluxo">
-                            <div class="arquitetura__node">DATA</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node arquitetura__node--ativo">AIRFLOW</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node">ETL</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node">POSTGRESQL</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node">POWER BI</div>
-                        </div>
-                    </div>
-
-                    <div class="projeto__conteudo">
-                        <h3>Plataforma de Dados para E-commerce</h3>
-
-                        <p>
-                            Plataforma de dados para e-commerce
-                            com pipeline ETL automatizado,
-                            armazenamento em PostgreSQL,
-                            Data Warehouse e visualização no Power BI.
-                        </p>
-
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>Airflow</span>
-                            <span>Docker</span>
-                            <span>PostgreSQL</span>
-                            <span>Power BI</span>
-                        </div>
-
-                        <div class="projeto__acoes">
-                            <button
-                                class="projeto__detalhes"
-                                type="button"
-                                data-project="ecommerce"
-                            >
-                                Ver detalhes
-                            </button>
-
-                            <a
-                                class="projeto__link"
-                                href="https://github.com/iamgusta/Plataforma-dados-e-commerce"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                GitHub ↗
-                            </a>
-                        </div>
-                    </div>
-
-                </article>
-
-
-
-                <!-- 03 -->
-                <article class="projeto projeto--dados">
-
-                    <div class="projeto__topo">
-                        <span class="projeto__numero">03</span>
-                        <span class="projeto__categoria">DATA ENGINEERING</span>
-                    </div>
-
-                    <div class="arquitetura">
-                        <span class="arquitetura__titulo">
-                            SALES PIPELINE
-                        </span>
-
-                        <div class="arquitetura__fluxo">
-                            <div class="arquitetura__node">CSV</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node arquitetura__node--ativo">PYTHON</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node">PANDAS</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node">MYSQL</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node">POWER BI</div>
-                        </div>
-                    </div>
-
-                    <div class="projeto__conteudo">
-                        <h3>Pipeline de Vendas</h3>
-
-                        <p>
-                            Pipeline de Engenharia de Dados para
-                            ingestão, transformação, armazenamento
-                            e análise de informações de vendas.
-                        </p>
-
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>Pandas</span>
-                            <span>MySQL</span>
-                            <span>Airflow</span>
-                            <span>Power BI</span>
-                        </div>
-
-                        <div class="projeto__acoes">
-                            <button
-                                class="projeto__detalhes"
-                                type="button"
-                                data-project="vendas"
-                            >
-                                Ver detalhes
-                            </button>
-
-                            <a
-                                class="projeto__link"
-                                href="https://github.com/iamgusta/Pipeline-de-vendas"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                GitHub ↗
-                            </a>
-                        </div>
-                    </div>
-
-                </article>
-
-
-
-                <!-- 04 -->
-                <article class="projeto">
-
-                    <div class="projeto__topo">
-                        <span class="projeto__numero">04</span>
-                        <span class="projeto__categoria">DATABASE</span>
-                    </div>
-
-                    <div class="arquitetura">
-                        <span class="arquitetura__titulo">
-                            DATABASE FLOW
-                        </span>
-
-                        <div class="arquitetura__fluxo">
-                            <div class="arquitetura__node">ORDERS</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node arquitetura__node--ativo">PYTHON</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node">SQLITE</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node">SQL</div>
-                        </div>
-                    </div>
-
-                    <div class="projeto__conteudo">
-                        <h3>Coffee Shop Database</h3>
-
-                        <p>
-                            Banco de dados desenvolvido para
-                            gerenciamento de vendas, pedidos,
-                            produtos, clientes e operações
-                            de uma cafeteria.
-                        </p>
-
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>SQLite</span>
-                            <span>SQL</span>
-                            <span>Database</span>
-                        </div>
-
-                        <div class="projeto__acoes">
-                            <a
-                                class="projeto__link"
-                                href="https://github.com/iamgusta/cafeteriadatabase"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Abrir projeto ↗
-                            </a>
-                        </div>
-                    </div>
-
-                </article>
-
-
-
-                <!-- 05 -->
-                <article class="projeto">
-
-                    <div class="projeto__topo">
-                        <span class="projeto__numero">05</span>
-                        <span class="projeto__categoria">PYTHON</span>
-                    </div>
-
-                    <div class="arquitetura">
-                        <span class="arquitetura__titulo">
-                            GAME LOGIC
-                        </span>
-
-                        <div class="arquitetura__fluxo">
-                            <div class="arquitetura__node">INPUT</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node arquitetura__node--ativo">PYTHON</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node">PYGAME</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node">GAME</div>
-                        </div>
-                    </div>
-
-                    <div class="projeto__conteudo">
-                        <h3>CrashGAME</h3>
-
-                        <p>
-                            Jogo criado em Python para desenvolver
-                            lógica de programação, eventos, colisões,
-                            pontuação e organização de código.
-                        </p>
-
-                        <div class="tags">
-                            <span>Python</span>
-                            <span>Pygame</span>
-                            <span>Lógica</span>
-                        </div>
-
-                        <div class="projeto__acoes">
-                            <a
-                                class="projeto__link"
-                                href="https://github.com/iamgusta/CrashGAME"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Abrir projeto ↗
-                            </a>
-                        </div>
-                    </div>
-
-                </article>
-
-
-
-                <!-- 06 -->
-                <article class="projeto">
-
-                    <div class="projeto__topo">
-                        <span class="projeto__numero">06</span>
-                        <span class="projeto__categoria">WEB</span>
-                    </div>
-
-                    <div class="arquitetura">
-                        <span class="arquitetura__titulo">
-                            PORTFOLIO FLOW
-                        </span>
-
-                        <div class="arquitetura__fluxo">
-                            <div class="arquitetura__node">HTML</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node">CSS</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node arquitetura__node--ativo">JS</div>
-                            <span class="arquitetura__seta">→</span>
-                            <div class="arquitetura__node">GITHUB PAGES</div>
-                        </div>
-                    </div>
-
-                    <div class="projeto__conteudo">
-                        <h3>Portfólio Pessoal</h3>
-
-                        <p>
-                            Meu espaço pessoal para apresentar projetos,
-                            tecnologias e minha evolução, com animações,
-                            interações em JavaScript e publicação
-                            através do GitHub Pages.
-                        </p>
-
-                        <div class="tags">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                            <span>GitHub Pages</span>
-                        </div>
-
-                        <div class="projeto__acoes">
-                            <a
-                                class="projeto__link"
-                                href="https://github.com/iamgusta/Portifolio"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                Abrir projeto ↗
-                            </a>
-                        </div>
-                    </div>
-
-                </article>
+            <div
+                class="tech-space"
+                id="tech-space"
+            >
+
+                <div
+                    class="tech-space__glow"
+                    aria-hidden="true"
+                ></div>
+
+
+                <div
+                    class="tech-space__ring tech-space__ring--one"
+                    aria-hidden="true"
+                ></div>
+
+
+                <div
+                    class="tech-space__ring tech-space__ring--two"
+                    aria-hidden="true"
+                ></div>
+
+
+                <div
+                    class="tech-space__ring tech-space__ring--three"
+                    aria-hidden="true"
+                ></div>
+
+
+                <button
+                    class="tech-core"
+                    type="button"
+                    data-tech="DATA ENGINEERING"
+                >
+                    DATA
+                </button>
+
+
+                <button
+                    class="tech-node"
+                    type="button"
+                    style="--x: 5%; --y: 19%;"
+                    data-tech="PYTHON"
+                >
+                    PYTHON
+                </button>
+
+
+                <button
+                    class="tech-node"
+                    type="button"
+                    style="--x: 67%; --y: 8%;"
+                    data-tech="SQL"
+                >
+                    SQL
+                </button>
+
+
+                <button
+                    class="tech-node"
+                    type="button"
+                    style="--x: 79%; --y: 36%;"
+                    data-tech="AIRFLOW"
+                >
+                    AIRFLOW
+                </button>
+
+
+                <button
+                    class="tech-node"
+                    type="button"
+                    style="--x: 6%; --y: 61%;"
+                    data-tech="KAFKA"
+                >
+                    KAFKA
+                </button>
+
+
+                <button
+                    class="tech-node"
+                    type="button"
+                    style="--x: 57%; --y: 77%;"
+                    data-tech="POSTGRESQL"
+                >
+                    POSTGRESQL
+                </button>
+
+
+                <button
+                    class="tech-node"
+                    type="button"
+                    style="--x: 27%; --y: 7%;"
+                    data-tech="DOCKER"
+                >
+                    DOCKER
+                </button>
+
+
+                <button
+                    class="tech-node"
+                    type="button"
+                    style="--x: 16%; --y: 79%;"
+                    data-tech="POWER BI"
+                >
+                    POWER BI
+                </button>
+
+
+                <button
+                    class="tech-node"
+                    type="button"
+                    style="--x: 80%; --y: 70%;"
+                    data-tech="FASTAPI"
+                >
+                    FASTAPI
+                </button>
+
+
+                <button
+                    class="tech-node"
+                    type="button"
+                    style="--x: 42%; --y: 4%;"
+                    data-tech="ETL"
+                >
+                    ETL
+                </button>
+
+
+                <button
+                    class="tech-node"
+                    type="button"
+                    style="--x: 38%; --y: 85%;"
+                    data-tech="MYSQL"
+                >
+                    MYSQL
+                </button>
 
             </div>
 
@@ -632,83 +1274,264 @@
 
 
         <!-- =====================================================
-             PROFISSÕES EM DADOS
+             DADO
         ====================================================== -->
+
         <section
-            class="secao reveal"
-            id="stack"
+            class="career"
+            id="carreira"
+            data-particle="#246bfd"
         >
 
-            <div class="secao__cabecalho">
+            <div class="career__header">
 
-                <div>
-                    <p class="eyebrow">
-                        02 / DATA CAREER
-                    </p>
-
-                    <h2>
-                        Qual profissão de Dados mais se identifica com você?
-                    </h2>
-                </div>
-
-                <p class="stack-introducao">
-                    Conte com a sorte do dado.
-                    Role o dado e descubra uma área,
-                    junto das principais tecnologias,
-                    ferramentas e conhecimentos utilizados nela.
+                <p class="eyebrow">
+                    03 / CHOOSE YOUR PATH
                 </p>
+
+
+                <h2>
+                    Deixe o dado escolher
+                    <span>um caminho.</span>
+                </h2>
+
+
+                <p>
+                    Arraste o dado com o mouse
+                    ou clique em rolar.
+                </p>
+
             </div>
 
 
-            <div class="stack-grid">
 
-                <article
-                    class="stack-card"
-                    data-career="A"
-                >
-                    <span class="stack-card__indice">A</span>
-                    <span class="stack-card__tipo">DATA ENGINEERING</span>
-                    <h3>Engenheiro de Dados</h3>
-                    <p>
-                        Python · SQL · ETL/ELT · Airflow · Docker · Kafka · Spark · PostgreSQL
-                    </p>
-                </article>
+            <div class="career__content">
 
-                <article
-                    class="stack-card"
-                    data-career="B"
+                <div
+                    class="dice-world"
+                    id="dice-world"
                 >
-                    <span class="stack-card__indice">B</span>
-                    <span class="stack-card__tipo">BUSINESS INTELLIGENCE</span>
-                    <h3>Analista de Business Intelligence</h3>
-                    <p>
-                        Power BI · SQL · Excel · DAX · Power Query · Dashboards · KPIs · Modelagem
-                    </p>
-                </article>
 
-                <article
-                    class="stack-card"
-                    data-career="C"
-                >
-                    <span class="stack-card__indice">C</span>
-                    <span class="stack-card__tipo">ARTIFICIAL INTELLIGENCE</span>
-                    <h3>Engenheiro de Inteligência Artificial</h3>
-                    <p>
-                        Python · Machine Learning · PyTorch · TensorFlow · Scikit-learn · APIs · Docker · MLflow
-                    </p>
-                </article>
+                    <div
+                        class="dice-world__light"
+                        aria-hidden="true"
+                    ></div>
 
-                <article
-                    class="stack-card"
-                    data-career="D"
-                >
-                    <span class="stack-card__indice">D</span>
-                    <span class="stack-card__tipo">DATA GOVERNANCE</span>
-                    <h3>Especialista em Governança de Dados</h3>
-                    <p>
-                        Data Quality · Catálogo · Linhagem · Metadados · Segurança · LGPD · Políticas · Data Stewardship
-                    </p>
-                </article>
+
+                    <div class="dice-scene">
+
+                        <div
+                            class="dice"
+                            id="dice"
+                            tabindex="0"
+                            role="button"
+                        >
+
+                            <div class="dice-face dice-face--front">
+                                <i class="pip pip--5"></i>
+                            </div>
+
+
+                            <div class="dice-face dice-face--back">
+
+                                <i class="pip pip--1"></i>
+                                <i class="pip pip--3"></i>
+                                <i class="pip pip--4"></i>
+                                <i class="pip pip--6"></i>
+                                <i class="pip pip--7"></i>
+                                <i class="pip pip--9"></i>
+
+                            </div>
+
+
+                            <div class="dice-face dice-face--right">
+
+                                <i class="pip pip--1"></i>
+                                <i class="pip pip--5"></i>
+                                <i class="pip pip--9"></i>
+
+                            </div>
+
+
+                            <div class="dice-face dice-face--left">
+
+                                <i class="pip pip--1"></i>
+                                <i class="pip pip--3"></i>
+                                <i class="pip pip--7"></i>
+                                <i class="pip pip--9"></i>
+
+                            </div>
+
+
+                            <div class="dice-face dice-face--top">
+
+                                <i class="pip pip--1"></i>
+                                <i class="pip pip--9"></i>
+
+                            </div>
+
+
+                            <div class="dice-face dice-face--bottom">
+
+                                <i class="pip pip--1"></i>
+                                <i class="pip pip--3"></i>
+                                <i class="pip pip--5"></i>
+                                <i class="pip pip--7"></i>
+                                <i class="pip pip--9"></i>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="button button--blue"
+                        id="dice-roll"
+                    >
+                        Rolar dado
+                    </button>
+
+                </div>
+
+
+
+                <div class="career-options">
+
+                    <div
+                        class="career-result"
+                        id="career-result"
+                    >
+
+                        <small>
+                            RESULTADO
+                        </small>
+
+                        <strong>
+                            ?
+                        </strong>
+
+                    </div>
+
+
+                    <article
+                        class="career-option"
+                        data-career="A"
+                    >
+
+                        <span>
+                            A
+                        </span>
+
+                        <div>
+
+                            <small>
+                                DATA ENGINEERING
+                            </small>
+
+                            <h3>
+                                Engenheiro de Dados
+                            </h3>
+
+                            <p>
+                                Python · SQL · ETL · Airflow ·
+                                Docker · Kafka · PostgreSQL
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="career-option"
+                        data-career="B"
+                    >
+
+                        <span>
+                            B
+                        </span>
+
+                        <div>
+
+                            <small>
+                                BUSINESS INTELLIGENCE
+                            </small>
+
+                            <h3>
+                                Analista de BI
+                            </h3>
+
+                            <p>
+                                Power BI · SQL · DAX ·
+                                Excel · KPIs · Dashboards
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="career-option"
+                        data-career="C"
+                    >
+
+                        <span>
+                            C
+                        </span>
+
+                        <div>
+
+                            <small>
+                                ARTIFICIAL INTELLIGENCE
+                            </small>
+
+                            <h3>
+                                Engenheiro de IA
+                            </h3>
+
+                            <p>
+                                Python · Machine Learning ·
+                                APIs · Docker · MLflow
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <article
+                        class="career-option"
+                        data-career="D"
+                    >
+
+                        <span>
+                            D
+                        </span>
+
+                        <div>
+
+                            <small>
+                                DATA GOVERNANCE
+                            </small>
+
+                            <h3>
+                                Governança de Dados
+                            </h3>
+
+                            <p>
+                                Data Quality · Linhagem ·
+                                Metadados · Segurança · LGPD
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
 
             </div>
 
@@ -719,83 +1542,82 @@
         <!-- =====================================================
              SOBRE
         ====================================================== -->
+
         <section
-            class="secao sobre reveal"
+            class="about-preview"
             id="sobre"
+            data-particle="#4f8cff"
         >
 
-            <div class="sobre__visual">
+            <p class="about-preview__number">
+                04
+            </p>
 
-                <div
-                    class="sobre-data"
-                    id="sobre-data"
-                >
-                    <div class="sobre-data__grid"></div>
-                    <div class="sobre-data__glow"></div>
 
-                    <div class="sobre-data__ring sobre-data__ring--1"></div>
-                    <div class="sobre-data__ring sobre-data__ring--2"></div>
-                    <div class="sobre-data__ring sobre-data__ring--3"></div>
+            <div class="about-preview__big">
 
-                    <div class="sobre-data__pulse"></div>
-                    <div class="sobre-data__core"></div>
+                <span>
+                    PROCESS.
+                </span>
 
-                    <span class="sobre-data__tag sobre-data__tag--1">Python</span>
-                    <span class="sobre-data__tag sobre-data__tag--2">SQL</span>
-                    <span class="sobre-data__tag sobre-data__tag--3">ETL</span>
-                    <span class="sobre-data__tag sobre-data__tag--4">Power BI</span>
-                    <span class="sobre-data__tag sobre-data__tag--5">Airflow</span>
-                    <span class="sobre-data__tag sobre-data__tag--6">PostgreSQL</span>
+                <span>
+                    DATA.
+                </span>
 
-                    <div class="sobre-data__footer">
-                        <span>DATA PROFILE</span>
-                        <strong>Processos + Dados + Automação</strong>
-                    </div>
-                </div>
+                <span>
+                    EVOLUTION.
+                </span>
 
             </div>
 
 
-            <div class="sobre__conteudo">
+            <div class="about-preview__content">
+
                 <p class="eyebrow">
-                    03 / SOBRE
+                    SOBRE MIM
                 </p>
 
+
                 <h2>
-                    Dados, tecnologia e vontade de construir melhor.
+                    Minha trajetória ajuda
+                    a forma como penso dados.
                 </h2>
 
+
                 <p>
-                    Minha trajetória profissional passou por áreas
-                    administrativas, estoque e e-commerce.
-                    Hoje, uso essa visão de processos para construir
-                    projetos voltados a dados, automação e organização
+                    Passei por áreas administrativas,
+                    estoque e e-commerce.
+
+                    Hoje uso essa visão de processos
+                    para desenvolver soluções envolvendo
+                    dados, automação e organização
                     da informação.
                 </p>
 
-                <p>
-                    Curso Sistemas de Informação e venho direcionando
-                    meus estudos e projetos para Engenharia de Dados,
-                    principalmente com Python, SQL e bancos de dados.
-                </p>
 
-                <div class="sobre__acoes">
+                <div class="about-preview__links">
+
                     <a
-                        class="botao botao--secundario"
                         href="About.Html"
+                        class="button button--blue magnetic"
                     >
                         Conhecer trajetória
+                        <span>→</span>
                     </a>
 
+
                     <a
-                        class="link-texto"
                         href="Curriculo.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
+                        class="button button--line magnetic"
                     >
-                        Abrir currículo ↗
+                        Currículo
+                        <span>↗</span>
                     </a>
+
                 </div>
+
             </div>
 
         </section>
@@ -805,130 +1627,111 @@
         <!-- =====================================================
              CONTATO
         ====================================================== -->
+
         <section
-            class="contato-novo reveal"
+            class="contact"
             id="contato"
+            data-particle="#22d3ee"
         >
 
-            <div class="contato-novo__visual">
+            <div
+                class="contact__giant"
+                aria-hidden="true"
+            >
+                LET'S TALK
+            </div>
 
-                <div
-                    class="contato-data"
-                    id="contato-data"
-                >
-                    <div class="contato-data__grid"></div>
-                    <div class="contato-data__glow"></div>
 
-                    <div class="contato-data__scene">
+            <div class="contact__copy">
 
-                        <div
-                            class="contato-cube"
-                            id="contato-cube"
-                        >
-                            <div class="contato-cube__face contato-cube__face--front"></div>
-                            <div class="contato-cube__face contato-cube__face--back"></div>
-                            <div class="contato-cube__face contato-cube__face--right"></div>
-                            <div class="contato-cube__face contato-cube__face--left"></div>
-                            <div class="contato-cube__face contato-cube__face--top"></div>
-                            <div class="contato-cube__face contato-cube__face--bottom"></div>
-                        </div>
+                <p class="eyebrow">
+                    05 / CONTACT
+                </p>
 
-                        <span class="contato-data__mini contato-data__mini--1"></span>
-                        <span class="contato-data__mini contato-data__mini--2"></span>
-                        <span class="contato-data__mini contato-data__mini--3"></span>
-                        <span class="contato-data__mini contato-data__mini--4"></span>
-                        <span class="contato-data__mini contato-data__mini--5"></span>
-                        <span class="contato-data__mini contato-data__mini--6"></span>
-                    </div>
 
-                    <div class="contato-data__info">
-                        <span>RECRUITER MODE</span>
-                        <strong>Contato direto</strong>
-                        <small>Dados • Oportunidades • Networking</small>
-                    </div>
-                </div>
+                <h2>
+                    Vamos transformar
+                    uma conversa em
+                    <span>oportunidade.</span>
+                </h2>
 
             </div>
 
 
 
-            <div class="contato-novo__conteudo">
+            <div
+                class="contact-orbit"
+                id="contact-orbit"
+            >
 
-                <p class="eyebrow">
-                    04 / CONTATO
-                </p>
+                <div
+                    class="contact-orbit__circle"
+                    aria-hidden="true"
+                ></div>
 
-                <h2>
-                    Quer conversar comigo?
-                </h2>
 
-                <p class="contato-novo__texto">
-                    Se você é recrutador, profissional da área
-                    ou quer trocar uma ideia sobre tecnologia e dados,
-                    estes são os melhores caminhos para falar comigo.
-                </p>
+                <div class="contact-orbit__center">
 
-                <div class="contato-opcoes">
+                    <span>
+                        GL
+                    </span>
 
-                    <a
-                        class="contato-card"
-                        href="mailto:gustavolopesti@outlook.com"
-                    >
-                        <div>
-                            <span class="contato-card__tipo">E-MAIL</span>
-                            <strong>gustavolopesti@outlook.com</strong>
-                        </div>
-
-                        <span class="contato-card__seta">↗</span>
-                    </a>
-
-                    <a
-                        class="contato-card"
-                        href="https://www.linkedin.com/in/iamgustavoti/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <div>
-                            <span class="contato-card__tipo">LINKEDIN</span>
-                            <strong>/in/iamgustavoti</strong>
-                        </div>
-
-                        <span class="contato-card__seta">↗</span>
-                    </a>
-
-                    <a
-                        class="contato-card"
-                        href="https://github.com/iamgusta"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <div>
-                            <span class="contato-card__tipo">GITHUB</span>
-                            <strong>github.com/iamgusta</strong>
-                        </div>
-
-                        <span class="contato-card__seta">↗</span>
-                    </a>
+                    <small>
+                        AVAILABLE
+                    </small>
 
                 </div>
 
-                <div class="contato-acoes">
 
-                    <button
-                        type="button"
-                        class="botao botao--primario"
-                        id="copiar-email"
-                    >
-                        Copiar e-mail
-                    </button>
+                <a
+                    href="mailto:gustavolopesti@outlook.com"
+                    class="contact-orbit__link contact-orbit__link--mail"
+                >
+                    EMAIL
+                    <i>↗</i>
+                </a>
 
-                    <span
-                        class="contato-feedback"
-                        id="contato-feedback"
-                        aria-live="polite"
-                    ></span>
 
-                </div>
+                <a
+                    href="https://www.linkedin.com/in/iamgustavoti/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-orbit__link contact-orbit__link--linkedin"
+                >
+                    LINKEDIN
+                    <i>↗</i>
+                </a>
+
+
+                <a
+                    href="https://github.com/iamgusta"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-orbit__link contact-orbit__link--github"
+                >
+                    GITHUB
+                    <i>↗</i>
+                </a>
+
+            </div>
+
+
+            <div class="contact__bottom">
+
+                <span>
+                    gustavolopesti@outlook.com
+                </span>
+
+
+                <button
+                    type="button"
+                    id="copy-email"
+                >
+                    COPIAR E-MAIL
+                </button>
+
+
+                <small id="copy-feedback"></small>
 
             </div>
 
@@ -939,87 +1742,43 @@
 
 
     <!-- =========================================================
-         MODAL DOS PROJETOS
+         FOOTER
     ========================================================== -->
-    <div
-        class="modal"
-        id="project-modal"
-        aria-hidden="true"
-    >
 
-        <div
-            class="modal__overlay"
-            data-close-modal
-        ></div>
+    <footer class="footer">
 
-        <div class="modal__conteudo">
+        <span>
+            Gustavo Lopes
+        </span>
 
-            <button
-                type="button"
-                class="modal__fechar"
-                data-close-modal
-                aria-label="Fechar"
-            >
-                ×
-            </button>
+        <span>
+            Data Engineering Portfolio
+        </span>
 
-            <p
-                class="modal__categoria"
-                id="modal-category"
-            >
-                DATA ENGINEERING
-            </p>
+        <span id="current-year">
+            2026
+        </span>
 
-            <h2 id="modal-title">Projeto</h2>
-
-            <p
-                class="modal__descricao"
-                id="modal-description"
-            ></p>
-
-            <div class="modal__bloco">
-                <small>ARQUITETURA</small>
-                <div
-                    class="modal__flow"
-                    id="modal-flow"
-                ></div>
-            </div>
-
-            <div class="modal__bloco">
-                <small>TECNOLOGIAS</small>
-                <div
-                    class="modal__tags"
-                    id="modal-tags"
-                ></div>
-            </div>
-
-            <a
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="botao botao--primario"
-                id="modal-github"
-            >
-                Abrir GitHub ↗
-            </a>
-
-        </div>
-
-    </div>
+    </footer>
 
 
 
     <!-- =========================================================
-         RODAPÉ
+         LIBS
     ========================================================== -->
-    <footer class="rodape">
-        <p>Gustavo Lopes</p>
 
-        <p>
-            Data Engineering Portfolio ·
-            <span id="ano-atual">2026</span>
-        </p>
-    </footer>
+    <script
+        src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"
+    ></script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+    ></script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+    ></script>
+
 
     <script src="./script/script.js"></script>
 

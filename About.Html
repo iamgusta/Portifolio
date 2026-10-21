@@ -12,18 +12,16 @@
 
     <meta
         name="description"
-        content="Conheça a trajetória de Gustavo Lopes, seus estudos, experiências e evolução na área de Engenharia de Dados."
+        content="Trajetória de Gustavo Lopes, estudante de Sistemas de Informação com foco em Engenharia de Dados."
     >
 
     <title>Sobre | Gustavo Lopes</title>
 
-    <!-- CSS principal -->
     <link
         rel="stylesheet"
         href="./Style/Style.Css"
     >
 
-    <!-- CSS da página About -->
     <link
         rel="stylesheet"
         href="./Style/About.css"
@@ -34,55 +32,72 @@
 
 <body>
 
-
     <!-- =========================================================
-         CABEÇALHO
+         FUNDO 3D
     ========================================================== -->
 
-    <header class="cabecalho">
+    <div
+        id="webgl-bg"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================================
+         CURSOR
+    ========================================================== -->
+
+    <div
+        class="cursor-ring"
+        id="cursor-ring"
+        aria-hidden="true"
+    ></div>
+
+    <div
+        class="cursor-dot"
+        id="cursor-dot"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header class="topbar">
 
         <a
-            class="marca"
             href="index.html"
+            class="brand"
         >
 
-            <span>
+            <span class="brand__symbol">
                 GL
             </span>
 
-            <small>
-                / DATA
-            </small>
+            <span class="brand__text">
+                DATA ENGINEERING
+            </span>
 
         </a>
 
 
-        <nav class="cabecalho__nav">
+        <nav class="navigation">
 
-            <a
-                class="cabecalho__link"
-                href="index.html"
-            >
+            <a href="index.html">
                 Home
             </a>
 
-            <a
-                class="cabecalho__link"
-                href="index.html#projetos"
-            >
-                Projetos
+            <a href="#trajetoria">
+                Trajetória
+            </a>
+
+            <a href="#agora">
+                Agora
             </a>
 
             <a
-                class="cabecalho__link"
-                href="index.html#stack"
-            >
-                Stack
-            </a>
-
-            <a
-                class="cabecalho__link cabecalho__link--destaque"
                 href="index.html#contato"
+                class="navigation__contact"
             >
                 Contato
             </a>
@@ -93,63 +108,82 @@
 
 
 
-    <main>
+    <main class="about-main">
 
 
         <!-- =====================================================
-             ABERTURA
+             HERO
         ====================================================== -->
 
-        <section class="sobre-hero reveal-about">
+        <section
+            class="about-hero"
+            data-particle="#4f8cff"
+        >
+
+            <div
+                class="about-hero__ghost"
+                aria-hidden="true"
+            >
+                ABOUT
+            </div>
 
 
-            <div class="sobre-hero__conteudo">
+            <div class="about-hero__copy">
 
-
-                <p class="eyebrow">
-                    SOBRE / GUSTAVO LOPES
+                <p class="eyebrow about-enter">
+                    ABOUT / GUSTAVO LOPES
                 </p>
 
 
                 <h1>
 
-                    Minha trajetória foi construída
+                    <span class="about-title-line">
+                        NÃO COMECEI
+                    </span>
 
-                    <span>
-                        um passo de cada vez.
+                    <span class="about-title-line">
+                        EM DADOS.
+                    </span>
+
+                    <span class="about-title-line about-title-line--blue">
+                        CHEGUEI ATÉ ELES.
                     </span>
 
                 </h1>
 
 
-                <p class="sobre-hero__texto">
+                <p class="about-hero__description about-enter">
 
-                    Antes de chegar à Engenharia de Dados,
-                    passei por diferentes áreas, processos
-                    e experiências.
+                    Minha trajetória passou por
+                    áreas administrativas,
+                    estoque, e-commerce
+                    e tecnologia.
 
-                    Hoje, tudo isso faz parte da maneira
-                    como penso tecnologia e construo projetos.
+                    Hoje direciono essa experiência
+                    para Engenharia de Dados.
 
                 </p>
 
 
-                <div class="sobre-hero__acoes">
+                <div class="about-hero__actions about-enter">
 
                     <a
                         href="Curriculo.pdf"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="botao botao--primario"
+                        class="button button--blue magnetic"
                     >
-                        Abrir currículo ↗
+                        Abrir currículo
+                        <span>↗</span>
                     </a>
+
 
                     <a
                         href="index.html#projetos"
-                        class="botao botao--secundario"
+                        class="button button--line magnetic"
                     >
                         Ver projetos
+                        <span>→</span>
                     </a>
 
                 </div>
@@ -159,134 +193,66 @@
 
 
             <!-- =================================================
-                 CUBO DE DADOS
+                 FOTO
             ================================================== -->
 
-            <div class="sobre-hero__visual">
+            <div
+                class="about-photo-world"
+                id="about-photo-world"
+            >
 
                 <div
-                    class="data-block"
-                    id="data-block"
+                    class="about-photo-world__line"
+                    aria-hidden="true"
+                ></div>
+
+
+                <div
+                    class="about-photo-world__circle"
+                    aria-hidden="true"
+                ></div>
+
+
+                <div
+                    class="about-photo"
+                    data-depth="1"
                 >
 
-                    <div class="data-block__grid"></div>
-                    <div class="data-block__glow"></div>
-
-                    <div
-                        class="data-block__scene"
-                        id="data-block-scene"
+                    <img
+                        src="./assets/Minha foto.jpeg"
+                        alt="Gustavo Lopes"
                     >
 
-                        <div
-                            class="data-block__cube"
-                            id="data-block-cube"
-                        >
-
-                            <!-- CAMADA SUPERIOR -->
-
-                            <span class="data-piece p01"></span>
-                            <span class="data-piece p02"></span>
-                            <span class="data-piece p03"></span>
-
-                            <span class="data-piece p04"></span>
-                            <span class="data-piece p05 data-piece--core"></span>
-                            <span class="data-piece p06"></span>
-
-                            <span class="data-piece p07"></span>
-                            <span class="data-piece p08"></span>
-                            <span class="data-piece p09"></span>
-
-
-                            <!-- CAMADA CENTRAL -->
-
-                            <span class="data-piece p10"></span>
-                            <span class="data-piece p11"></span>
-                            <span class="data-piece p12"></span>
-
-                            <span class="data-piece p13"></span>
-                            <span class="data-piece p14"></span>
-                            <span class="data-piece p15"></span>
-
-                            <span class="data-piece p16"></span>
-                            <span class="data-piece p17"></span>
-                            <span class="data-piece p18"></span>
-
-
-                            <!-- CAMADA INFERIOR -->
-
-                            <span class="data-piece p19"></span>
-                            <span class="data-piece p20"></span>
-                            <span class="data-piece p21"></span>
-
-                            <span class="data-piece p22"></span>
-                            <span class="data-piece p23"></span>
-                            <span class="data-piece p24"></span>
-
-                            <span class="data-piece p25"></span>
-                            <span class="data-piece p26"></span>
-                            <span class="data-piece p27"></span>
-
-                        </div>
-
-
-                        <!-- BLOCOS FLUTUANTES -->
-
-                        <span class="floating-cube floating-cube--1"></span>
-                        <span class="floating-cube floating-cube--2"></span>
-                        <span class="floating-cube floating-cube--3"></span>
-                        <span class="floating-cube floating-cube--4"></span>
-                        <span class="floating-cube floating-cube--5"></span>
-                        <span class="floating-cube floating-cube--6"></span>
-                        <span class="floating-cube floating-cube--7"></span>
-
-                    </div>
-
-
-                    <div class="data-block__info">
-
-                        <div>
-
-                            <small>
-                                DATA PROFILE
-                            </small>
-
-                            <strong>
-                                Engenharia de Dados
-                            </strong>
-
-                        </div>
-
-
-                        <span class="data-block__status">
-
-                            <i></i>
-
-                            em evolução
-
-                        </span>
-
-                    </div>
+                    <div
+                        class="about-photo__overlay"
+                        aria-hidden="true"
+                    ></div>
 
                 </div>
 
 
-                <div class="sobre-local">
+                <span
+                    class="about-photo-label about-photo-label--one"
+                    data-depth="1.5"
+                >
+                    ARAPIRACA / AL
+                </span>
 
-                    <span class="sobre-local__ponto"></span>
 
-                    <div>
+                <span
+                    class="about-photo-label about-photo-label--two"
+                    data-depth="1.8"
+                >
+                    SYSTEMS INFORMATION
+                </span>
 
-                        <small>
-                            LOCATION
-                        </small>
 
-                        <strong>
-                            Arapiraca / AL
-                        </strong>
-
-                    </div>
-
-                </div>
+                <span
+                    class="about-photo-label about-photo-label--three"
+                    data-depth="1.3"
+                >
+                    DATA ENGINEERING
+                </span>
 
             </div>
 
@@ -295,69 +261,43 @@
 
 
         <!-- =====================================================
-             QUEM SOU
+             MINDSET
         ====================================================== -->
 
-        <section class="sobre-secao reveal-about">
+        <section
+            class="about-statement"
+            data-particle="#22d3ee"
+        >
+
+            <p>
+                01 / MINDSET
+            </p>
 
 
-            <div class="sobre-secao__numero">
-                01
-            </div>
+            <div>
 
+                <span>
+                    PROCESS
+                </span>
 
-            <div class="sobre-secao__titulo">
+                <span>
+                    BEFORE
+                </span>
 
-
-                <p class="eyebrow">
-                    QUEM SOU
-                </p>
-
-
-                <h2>
-                    Tecnologia começou como interesse e virou direção.
-                </h2>
-
-            </div>
-
-
-            <div class="sobre-secao__texto">
-
-
-                <p>
-
-                    Sempre tive interesse por tecnologia e por entender
-                    como as coisas funcionam por trás dos sistemas.
-
-                    Com o tempo, esse interesse deixou de ser apenas
-                    curiosidade e passou a fazer parte da minha formação
-                    e dos projetos que desenvolvo.
-
-                </p>
-
-
-                <p>
-
-                    Minha experiência profissional também passou por
-                    áreas administrativas, estoque e e-commerce.
-
-                    Foram ambientes diferentes, mas que me ensinaram
-                    sobre organização, processos, responsabilidade
-                    e atenção aos detalhes.
-
-                </p>
-
-
-                <p>
-
-                    Hoje direciono essa experiência para a área de dados,
-                    desenvolvendo projetos envolvendo pipelines,
-                    automação, bancos de dados e processamento
-                    de informações.
-
-                </p>
+                <span class="about-statement__blue">
+                    TOOL.
+                </span>
 
             </div>
+
+
+            <p class="about-statement__text">
+
+                Antes de pensar apenas no código,
+                gosto de entender de onde os dados vêm,
+                como são tratados e onde precisam chegar.
+
+            </p>
 
         </section>
 
@@ -367,11 +307,13 @@
              TRAJETÓRIA
         ====================================================== -->
 
-        <section class="trajetoria reveal-about">
+        <section
+            class="about-timeline"
+            id="trajetoria"
+            data-particle="#246bfd"
+        >
 
-
-            <div class="trajetoria__cabecalho">
-
+            <header class="about-timeline__header">
 
                 <p class="eyebrow">
                     02 / TRAJETÓRIA
@@ -379,39 +321,43 @@
 
 
                 <h2>
-                    Experiências que ajudaram a construir minha base.
+                    Um caminho construído
+                    <span>por etapas.</span>
                 </h2>
 
-            </div>
+            </header>
 
 
-            <div class="timeline">
+
+            <div class="journey">
+
+                <div
+                    class="journey__progress"
+                    id="journey-progress"
+                    aria-hidden="true"
+                ></div>
 
 
-                <!-- YAKULT -->
 
-                <article class="timeline__item">
+                <!-- =================================================
+                     01 / YAKULT
+                ================================================== -->
 
+                <article
+                    class="journey-step"
+                    data-step="01"
+                >
 
-                    <div class="timeline__marcador">
-                        <span></span>
+                    <div class="journey-step__index">
+                        01
                     </div>
 
 
-                    <div class="timeline__conteudo interaction-card">
+                    <div class="journey-step__copy">
 
-
-                        <div class="timeline__topo">
-
-                            <span>
-                                EXPERIÊNCIA
-                            </span>
-
-                            <small>
-                                ADMINISTRATIVO
-                            </small>
-
-                        </div>
+                        <small>
+                            EXPERIÊNCIA / ADMINISTRATIVO
+                        </small>
 
 
                         <h3>
@@ -425,13 +371,35 @@
 
 
                         <p>
-
                             Apoio às rotinas administrativas,
                             organização de processos internos
                             e suporte às operações de estoque
                             e distribuição.
-
                         </p>
+
+                    </div>
+
+
+                    <div
+                        class="journey-step__visual journey-step__visual--process"
+                        aria-hidden="true"
+                    >
+
+                        <span>
+                            PROCESS
+                        </span>
+
+                        <i></i>
+
+                        <span>
+                            ORGANIZE
+                        </span>
+
+                        <i></i>
+
+                        <span>
+                            SUPPORT
+                        </span>
 
                     </div>
 
@@ -439,30 +407,25 @@
 
 
 
-                <!-- VIA RICA -->
+                <!-- =================================================
+                     02 / VIA RICA
+                ================================================== -->
 
-                <article class="timeline__item">
+                <article
+                    class="journey-step"
+                    data-step="02"
+                >
 
-
-                    <div class="timeline__marcador">
-                        <span></span>
+                    <div class="journey-step__index">
+                        02
                     </div>
 
 
-                    <div class="timeline__conteudo interaction-card">
+                    <div class="journey-step__copy">
 
-
-                        <div class="timeline__topo">
-
-                            <span>
-                                EXPERIÊNCIA
-                            </span>
-
-                            <small>
-                                OPERAÇÕES
-                            </small>
-
-                        </div>
+                        <small>
+                            EXPERIÊNCIA / OPERAÇÕES
+                        </small>
 
 
                         <h3>
@@ -476,13 +439,89 @@
 
 
                         <p>
-
                             Atuação com operações de estoque,
                             atendimento aos clientes,
-                            emissão de notas fiscais e apoio
-                            às atividades operacionais.
-
+                            emissão de notas fiscais
+                            e apoio operacional.
                         </p>
+
+                    </div>
+
+
+
+                    <!-- VISUAL NOVO VIA RICA -->
+
+                    <div
+                        class="journey-step__visual journey-step__visual--stock"
+                        aria-hidden="true"
+                    >
+
+                        <div class="stock-card stock-card--one">
+
+                            <span>
+                                01
+                            </span>
+
+                            <strong>
+                                ESTOQUE
+                            </strong>
+
+                            <small>
+                                Entrada / saída
+                            </small>
+
+                        </div>
+
+
+                        <div class="stock-card stock-card--two">
+
+                            <span>
+                                02
+                            </span>
+
+                            <strong>
+                                NF-E
+                            </strong>
+
+                            <small>
+                                Emissão fiscal
+                            </small>
+
+                        </div>
+
+
+                        <div class="stock-card stock-card--three">
+
+                            <span>
+                                03
+                            </span>
+
+                            <strong>
+                                CLIENTES
+                            </strong>
+
+                            <small>
+                                Atendimento
+                            </small>
+
+                        </div>
+
+
+                        <div class="stock-card stock-card--four">
+
+                            <span>
+                                04
+                            </span>
+
+                            <strong>
+                                PEÇAS
+                            </strong>
+
+                            <small>
+                                Organização
+                            </small>
+
+                        </div>
 
                     </div>
 
@@ -490,30 +529,25 @@
 
 
 
-                <!-- E-COMMERCE -->
+                <!-- =================================================
+                     03 / E-COMMERCE
+                ================================================== -->
 
-                <article class="timeline__item timeline__item--atual">
+                <article
+                    class="journey-step"
+                    data-step="03"
+                >
 
-
-                    <div class="timeline__marcador">
-                        <span></span>
+                    <div class="journey-step__index">
+                        03
                     </div>
 
 
-                    <div class="timeline__conteudo interaction-card">
+                    <div class="journey-step__copy">
 
-
-                        <div class="timeline__topo">
-
-                            <span>
-                                EXPERIÊNCIA
-                            </span>
-
-                            <small>
-                                E-COMMERCE
-                            </small>
-
-                        </div>
+                        <small>
+                            EXPERIÊNCIA / E-COMMERCE
+                        </small>
 
 
                         <h3>
@@ -527,14 +561,126 @@
 
 
                         <p>
-
-                            Atuação com produção digital,
+                            Produção digital,
                             personalização de produtos,
                             gerenciamento de pedidos,
-                            organização de processos e suporte
-                            às operações de vendas online.
-
+                            organização de processos
+                            e apoio às vendas online.
                         </p>
+
+                    </div>
+
+
+
+                    <!-- VISUAL NOVO E-COMMERCE -->
+
+                    <div
+                        class="journey-step__visual journey-step__visual--commerce"
+                        aria-hidden="true"
+                    >
+
+                        <div class="commerce-screen">
+
+                            <div class="commerce-screen__top">
+
+                                <div class="commerce-screen__dots">
+
+                                    <i></i>
+                                    <i></i>
+                                    <i></i>
+
+                                </div>
+
+
+                                <span>
+                                    E-COMMERCE / OPERATIONS
+                                </span>
+
+                            </div>
+
+
+
+                            <div class="commerce-screen__body">
+
+                                <div class="commerce-metric">
+
+                                    <small>
+                                        PEDIDOS
+                                    </small>
+
+                                    <strong>
+                                        128
+                                    </strong>
+
+                                    <span>
+                                        +12.4%
+                                    </span>
+
+                                </div>
+
+
+                                <div class="commerce-metric">
+
+                                    <small>
+                                        PRODUÇÃO
+                                    </small>
+
+                                    <strong>
+                                        94%
+                                    </strong>
+
+                                    <span>
+                                        ONLINE
+                                    </span>
+
+                                </div>
+
+
+
+                                <div class="commerce-flow">
+
+                                    <span>
+                                        ORDER
+                                    </span>
+
+                                    <i></i>
+
+                                    <span>
+                                        DESIGN
+                                    </span>
+
+                                    <i></i>
+
+                                    <span>
+                                        PRODUCTION
+                                    </span>
+
+                                    <i></i>
+
+                                    <span>
+                                        DELIVERY
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <span class="commerce-tag commerce-tag--one">
+                            PEDIDOS
+                        </span>
+
+
+                        <span class="commerce-tag commerce-tag--two">
+                            PERSONALIZAÇÃO
+                        </span>
+
+
+                        <span class="commerce-tag commerce-tag--three">
+                            VENDAS
+                        </span>
 
                     </div>
 
@@ -542,30 +688,25 @@
 
 
 
-                <!-- FACULDADE -->
+                <!-- =================================================
+                     04 / FACULDADE
+                ================================================== -->
 
-                <article class="timeline__item timeline__item--atual">
+                <article
+                    class="journey-step"
+                    data-step="04"
+                >
 
-
-                    <div class="timeline__marcador">
-                        <span></span>
+                    <div class="journey-step__index">
+                        04
                     </div>
 
 
-                    <div class="timeline__conteudo interaction-card">
+                    <div class="journey-step__copy">
 
-
-                        <div class="timeline__topo">
-
-                            <span>
-                                FORMAÇÃO
-                            </span>
-
-                            <small>
-                                2024 — 2027
-                            </small>
-
-                        </div>
+                        <small>
+                            FORMAÇÃO / 2024 — 2027
+                        </small>
 
 
                         <h3>
@@ -579,13 +720,35 @@
 
 
                         <p>
-
                             Graduação voltada ao desenvolvimento
                             de sistemas, bancos de dados,
-                            engenharia de software e tecnologia
-                            da informação.
-
+                            engenharia de software
+                            e tecnologia da informação.
                         </p>
+
+                    </div>
+
+
+                    <div
+                        class="journey-step__visual journey-step__visual--education"
+                        aria-hidden="true"
+                    >
+
+                        <span>
+                            CODE
+                        </span>
+
+                        <span>
+                            DATABASE
+                        </span>
+
+                        <span>
+                            SYSTEMS
+                        </span>
+
+                        <span>
+                            SOFTWARE
+                        </span>
 
                     </div>
 
@@ -593,30 +756,25 @@
 
 
 
-                <!-- DADOS -->
+                <!-- =================================================
+                     05 / DATA ENGINEERING
+                ================================================== -->
 
-                <article class="timeline__item timeline__item--destaque">
+                <article
+                    class="journey-step journey-step--active"
+                    data-step="05"
+                >
 
-
-                    <div class="timeline__marcador">
-                        <span></span>
+                    <div class="journey-step__index">
+                        05
                     </div>
 
 
-                    <div class="timeline__conteudo interaction-card">
+                    <div class="journey-step__copy">
 
-
-                        <div class="timeline__topo">
-
-                            <span>
-                                FOCO ATUAL
-                            </span>
-
-                            <small>
-                                DATA ENGINEERING
-                            </small>
-
-                        </div>
+                        <small>
+                            CURRENT / DATA ENGINEERING
+                        </small>
 
 
                         <h3>
@@ -630,18 +788,48 @@
 
 
                         <p>
-
-                            Desenvolvimento de projetos envolvendo
-                            Python, SQL, pipelines, ETL,
+                            Projetos envolvendo Python,
+                            SQL, pipelines, ETL,
                             bancos de dados, Docker,
                             Airflow e processamento de dados.
-
                         </p>
 
                     </div>
 
-                </article>
 
+                    <div
+                        class="journey-step__visual journey-step__visual--data"
+                        aria-hidden="true"
+                    >
+
+                        <div class="data-center">
+                            DATA
+                        </div>
+
+
+                        <span>
+                            PY
+                        </span>
+
+                        <span>
+                            SQL
+                        </span>
+
+                        <span>
+                            ETL
+                        </span>
+
+                        <span>
+                            DW
+                        </span>
+
+                        <span>
+                            API
+                        </span>
+
+                    </div>
+
+                </article>
 
             </div>
 
@@ -650,14 +838,15 @@
 
 
         <!-- =====================================================
-             COMO EU TRABALHO
+             PRINCÍPIOS
         ====================================================== -->
 
-        <section class="forma-trabalho reveal-about">
+        <section
+            class="principles"
+            data-particle="#4de8ff"
+        >
 
-
-            <div class="forma-trabalho__cabecalho">
-
+            <header>
 
                 <p class="eyebrow">
                     03 / COMO EU PENSO
@@ -665,16 +854,18 @@
 
 
                 <h2>
-                    Mais do que ferramentas, gosto de entender o processo.
+                    Três coisas que
+                    <span>levo para os projetos.</span>
                 </h2>
 
-            </div>
+            </header>
 
 
-            <div class="forma-trabalho__grid">
+
+            <div class="principles__grid">
 
 
-                <article class="forma-card interaction-card">
+                <article class="principle">
 
                     <span>
                         01
@@ -687,19 +878,17 @@
 
 
                     <p>
-
-                        Gosto de manter projetos,
-                        arquivos e processos organizados
-                        para facilitar manutenção
-                        e evolução.
-
+                        Estrutura clara,
+                        arquivos organizados
+                        e processos fáceis
+                        de entender e manter.
                     </p>
 
                 </article>
 
 
 
-                <article class="forma-card interaction-card">
+                <article class="principle">
 
                     <span>
                         02
@@ -707,24 +896,22 @@
 
 
                     <h3>
-                        Entender o fluxo
+                        Fluxo
                     </h3>
 
 
                     <p>
-
-                        Antes de pensar apenas no código,
-                        procuro entender de onde os dados
-                        vêm, como são tratados e onde
-                        precisam chegar.
-
+                        Entender origem,
+                        transformação,
+                        armazenamento
+                        e destino da informação.
                     </p>
 
                 </article>
 
 
 
-                <article class="forma-card interaction-card">
+                <article class="principle">
 
                     <span>
                         03
@@ -737,15 +924,13 @@
 
 
                     <p>
-
-                        Cada projeto é uma oportunidade
-                        de experimentar tecnologias novas
-                        e melhorar o que já construí.
-
+                        Cada projeto serve
+                        para testar ideias,
+                        aprender ferramentas
+                        e melhorar o anterior.
                     </p>
 
                 </article>
-
 
             </div>
 
@@ -757,11 +942,13 @@
              FOCO ATUAL
         ====================================================== -->
 
-        <section class="foco-atual reveal-about">
+        <section
+            class="current-focus"
+            id="agora"
+            data-particle="#246bfd"
+        >
 
-
-            <div class="foco-atual__conteudo">
-
+            <div class="current-focus__copy">
 
                 <p class="eyebrow">
                     04 / AGORA
@@ -769,52 +956,84 @@
 
 
                 <h2>
-                    Construindo minha base em Engenharia de Dados.
+                    Construindo minha base
+                    <span>em Engenharia de Dados.</span>
                 </h2>
 
 
                 <p>
-
-                    Meu foco atual está em aprofundar conhecimentos
-                    em pipelines, ETL, bancos de dados,
-                    processamento de eventos e automação.
-
+                    Meu foco atual está em
+                    pipelines, ETL, bancos de dados,
+                    processamento de eventos,
+                    automação e cloud.
                 </p>
 
 
-                <div class="foco-atual__stack">
 
-                    <div data-tech="PYTHON">
-                        <span>PYTHON</span>
-                    </div>
+                <div class="focus-techs">
 
-                    <div data-tech="SQL">
-                        <span>SQL</span>
-                    </div>
+                    <button
+                        type="button"
+                        data-focus-tech="PYTHON"
+                    >
+                        PYTHON
+                    </button>
 
-                    <div data-tech="POSTGRESQL">
-                        <span>POSTGRESQL</span>
-                    </div>
 
-                    <div data-tech="MYSQL">
-                        <span>MYSQL</span>
-                    </div>
+                    <button
+                        type="button"
+                        data-focus-tech="SQL"
+                    >
+                        SQL
+                    </button>
 
-                    <div data-tech="DOCKER">
-                        <span>DOCKER</span>
-                    </div>
 
-                    <div data-tech="AIRFLOW">
-                        <span>AIRFLOW</span>
-                    </div>
+                    <button
+                        type="button"
+                        data-focus-tech="POSTGRESQL"
+                    >
+                        POSTGRESQL
+                    </button>
 
-                    <div data-tech="KAFKA">
-                        <span>KAFKA</span>
-                    </div>
 
-                    <div data-tech="FASTAPI">
-                        <span>FASTAPI</span>
-                    </div>
+                    <button
+                        type="button"
+                        data-focus-tech="MYSQL"
+                    >
+                        MYSQL
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-focus-tech="DOCKER"
+                    >
+                        DOCKER
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-focus-tech="AIRFLOW"
+                    >
+                        AIRFLOW
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-focus-tech="KAFKA"
+                    >
+                        KAFKA
+                    </button>
+
+
+                    <button
+                        type="button"
+                        data-focus-tech="AWS"
+                    >
+                        AWS
+                    </button>
 
                 </div>
 
@@ -823,83 +1042,48 @@
 
 
             <!-- =================================================
-                 CUBO INTERNO / EXTERNO
+                 VISUAL FOCO
             ================================================== -->
 
-            <div class="core-visual">
+            <div
+                class="focus-visual"
+                id="focus-visual"
+            >
+
+                <div class="focus-ring focus-ring--one"></div>
+
+                <div class="focus-ring focus-ring--two"></div>
+
+                <div class="focus-ring focus-ring--three"></div>
 
 
-                <div class="core-visual__top">
-
-                    <span>
-                        DATA CORE
-                    </span>
-
-                    <span>
-                        INTERACTIVE
-                    </span>
-
-                </div>
+                <span class="focus-node focus-node--one">
+                    PY
+                </span>
 
 
-                <div
-                    class="core-scene"
-                    id="core-scene"
-                >
-
-                    <div
-                        class="outer-cube"
-                        id="outer-cube"
-                    >
-
-                        <div class="outer-face outer-face--front"></div>
-                        <div class="outer-face outer-face--back"></div>
-                        <div class="outer-face outer-face--right"></div>
-                        <div class="outer-face outer-face--left"></div>
-                        <div class="outer-face outer-face--top"></div>
-                        <div class="outer-face outer-face--bottom"></div>
+                <span class="focus-node focus-node--two">
+                    SQL
+                </span>
 
 
-                        <div class="inner-cube">
-
-                            <div class="inner-face inner-face--front">
-                                DATA
-                            </div>
-
-                            <div class="inner-face inner-face--back">
-                                SQL
-                            </div>
-
-                            <div class="inner-face inner-face--right">
-                                ETL
-                            </div>
-
-                            <div class="inner-face inner-face--left">
-                                API
-                            </div>
-
-                            <div class="inner-face inner-face--top">
-                                PY
-                            </div>
-
-                            <div class="inner-face inner-face--bottom">
-                                DW
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
+                <span class="focus-node focus-node--three">
+                    ETL
+                </span>
 
 
-                <div class="core-visual__resultado">
+                <span class="focus-node focus-node--four">
+                    DW
+                </span>
+
+
+                <div class="focus-center">
 
                     <small>
                         CURRENT FOCUS
                     </small>
 
-                    <strong id="core-result">
+                    <strong id="focus-result">
                         DATA ENGINEERING
                     </strong>
 
@@ -915,73 +1099,100 @@
              FINAL
         ====================================================== -->
 
-        <section class="sobre-final reveal-about">
-
+        <section
+            class="about-final"
+            data-particle="#4de8ff"
+        >
 
             <p class="eyebrow">
-                CONTINUANDO A CONSTRUIR
+                THE JOURNEY CONTINUES
             </p>
 
 
             <h2>
-
-                Ainda estou construindo minha trajetória.
-
-                <span>
-                    E isso faz parte do processo.
-                </span>
-
+                Ainda estou construindo
+                <span>minha trajetória.</span>
             </h2>
 
 
-            <div class="sobre-final__acoes">
+            <p>
+                E é exatamente por isso que
+                este portfólio continuará mudando.
+            </p>
+
+
+
+            <div class="about-final__buttons">
 
                 <a
                     href="index.html#projetos"
-                    class="botao botao--primario"
+                    class="button button--blue magnetic"
                 >
-                    Conhecer meus projetos
+                    Projetos
+                    <span>→</span>
                 </a>
+
 
                 <a
                     href="https://github.com/iamgusta"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="botao botao--secundario"
+                    class="button button--line magnetic"
                 >
-                    GitHub ↗
+                    GitHub
+                    <span>↗</span>
                 </a>
 
             </div>
 
         </section>
 
-
     </main>
 
 
 
     <!-- =========================================================
-         RODAPÉ
+         FOOTER
     ========================================================== -->
 
-    <footer class="rodape">
+    <footer class="footer">
 
-        <p>
+        <span>
             Gustavo Lopes
-        </p>
+        </span>
 
-        <p>
-            Data Engineering Portfolio · 2026
-        </p>
+        <span>
+            Data Engineering Portfolio
+        </span>
+
+        <span id="current-year">
+            2026
+        </span>
 
     </footer>
 
 
-    <!-- SCRIPT DO ABOUT -->
+
+    <!-- =========================================================
+         LIBS
+    ========================================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"
+    ></script>
+
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+    ></script>
+
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+    ></script>
+
 
     <script src="./script/about.js"></script>
-
 
 </body>
 
